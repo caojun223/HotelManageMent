@@ -10,6 +10,7 @@
         <module>HotelContent</module>
         <module>HotelWeb</module>
         <module>HotelManageWeb</module>
+        <module>HotelLayuiUtil</module>
     </modules>
 
     <properties>
