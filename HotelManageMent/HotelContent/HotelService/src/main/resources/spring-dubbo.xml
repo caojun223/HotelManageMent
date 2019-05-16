@@ -14,6 +14,6 @@
 	<dubbo:registry address="zookeeper://10.12.159.133:2181" />
 	
 	<dubbo:protocol name="dubbo" port="20880" />
-	
-	<dubbo:service interface="com.czl.service.Eservice" ref="eserviceImp" />
+
+	<dubbo:service interface="com.czl.service.UserInfoService" ref="userInfoServiceImpl" />
 </beans>

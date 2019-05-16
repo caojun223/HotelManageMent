@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.czl.mapper.PaymentmanageMapper" >
+  <resultMap id="BaseResultMap" type="com.czl.pojo.Paymentmanage" >
+    <id column="PaymentId" property="paymentid" jdbcType="INTEGER" />
+    <result column="UserId" property="userid" jdbcType="INTEGER" />
+    <result column="orderNumber" property="ordernumber" jdbcType="INTEGER" />
+    <result column="ConsumptionId" property="consumptionid" jdbcType="INTEGER" />
+    <result column="totalprice" property="totalprice" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    PaymentId, UserId, orderNumber, ConsumptionId, totalprice
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.czl.pojo.PaymentmanageExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from paymentmanage
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from paymentmanage
+    where PaymentId = #{paymentid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from paymentmanage
+    where PaymentId = #{paymentid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.czl.pojo.PaymentmanageExample" >
+    delete from paymentmanage
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.czl.pojo.Paymentmanage" >
+    insert into paymentmanage (PaymentId, UserId, orderNumber, 
+      ConsumptionId, totalprice)
+    values (#{paymentid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{ordernumber,jdbcType=INTEGER}, 
+      #{consumptionid,jdbcType=INTEGER}, #{totalprice,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.czl.pojo.Paymentmanage" >
+    insert into paymentmanage
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="paymentid != null" >
+        PaymentId,
+      </if>
+      <if test="userid != null" >
+        UserId,
+      </if>
+      <if test="ordernumber != null" >
+        orderNumber,
+      </if>
+      <if test="consumptionid != null" >
+        ConsumptionId,
+      </if>
+      <if test="totalprice != null" >
+        totalprice,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="paymentid != null" >
+        #{paymentid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="ordernumber != null" >
+        #{ordernumber,jdbcType=INTEGER},
+      </if>
+      <if test="consumptionid != null" >
+        #{consumptionid,jdbcType=INTEGER},
+      </if>
+      <if test="totalprice != null" >
+        #{totalprice,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.czl.pojo.PaymentmanageExample" resultType="java.lang.Integer" >
+    select count(*) from paymentmanage
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update paymentmanage
+    <set >
+      <if test="record.paymentid != null" >
+        PaymentId = #{record.paymentid,jdbcType=INTEGER},
+      </if>
+      <if test="record.userid != null" >
+        UserId = #{record.userid,jdbcType=INTEGER},
+      </if>
+      <if test="record.ordernumber != null" >
+        orderNumber = #{record.ordernumber,jdbcType=INTEGER},
+      </if>
+      <if test="record.consumptionid != null" >
+        ConsumptionId = #{record.consumptionid,jdbcType=INTEGER},
+      </if>
+      <if test="record.totalprice != null" >
+        totalprice = #{record.totalprice,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update paymentmanage
+    set PaymentId = #{record.paymentid,jdbcType=INTEGER},
+      UserId = #{record.userid,jdbcType=INTEGER},
+      orderNumber = #{record.ordernumber,jdbcType=INTEGER},
+      ConsumptionId = #{record.consumptionid,jdbcType=INTEGER},
+      totalprice = #{record.totalprice,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.czl.pojo.Paymentmanage" >
+    update paymentmanage
+    <set >
+      <if test="userid != null" >
+        UserId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="ordernumber != null" >
+        orderNumber = #{ordernumber,jdbcType=INTEGER},
+      </if>
+      <if test="consumptionid != null" >
+        ConsumptionId = #{consumptionid,jdbcType=INTEGER},
+      </if>
+      <if test="totalprice != null" >
+        totalprice = #{totalprice,jdbcType=INTEGER},
+      </if>
+    </set>
+    where PaymentId = #{paymentid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.czl.pojo.Paymentmanage" >
+    update paymentmanage
+    set UserId = #{userid,jdbcType=INTEGER},
+      orderNumber = #{ordernumber,jdbcType=INTEGER},
+      ConsumptionId = #{consumptionid,jdbcType=INTEGER},
+      totalprice = #{totalprice,jdbcType=INTEGER}
+    where PaymentId = #{paymentid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.czl.mapper.UserinfoMapper" >
+  <resultMap id="BaseResultMap" type="com.czl.pojo.Userinfo" >
+    <id column="UserId" property="userid" jdbcType="INTEGER" />
+    <result column="UserName" property="username" jdbcType="VARCHAR" />
+    <result column="UserPass" property="userpass" jdbcType="VARCHAR" />
+    <result column="UserSex" property="usersex" jdbcType="VARCHAR" />
+    <result column="UserTel" property="usertel" jdbcType="VARCHAR" />
+    <result column="UserCartType" property="usercarttype" jdbcType="VARCHAR" />
+    <result column="UserCart" property="usercart" jdbcType="VARCHAR" />
+    <result column="UserState" property="userstate" jdbcType="VARCHAR" />
+    <result column="UserPoints" property="userpoints" jdbcType="INTEGER" />
+    <result column="levelID" property="levelid" jdbcType="INTEGER" />
+    <result column="UserEmail" property="useremail" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    UserId, UserName, UserPass, UserSex, UserTel, UserCartType, UserCart, UserState, 
+    UserPoints, levelID, UserEmail
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.czl.pojo.UserinfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from userinfo
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from userinfo
+    where UserId = #{userid,jdbcType=INTEGER}
+  </select>
+  <select id="selectByPrimaryName" resultMap="BaseResultMap" parameterType="String" >
+    select
+    <include refid="Base_Column_List" />
+    from userinfo
+    where UserName = #{username,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from userinfo
+    where UserId = #{userid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.czl.pojo.UserinfoExample" >
+    delete from userinfo
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.czl.pojo.Userinfo" >
+    insert into userinfo (UserId, UserName, UserPass, 
+      UserSex, UserTel, UserCartType, 
+      UserCart, UserState, UserPoints, 
+      levelID, UserEmail)
+    values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{userpass,jdbcType=VARCHAR}, 
+      #{usersex,jdbcType=VARCHAR}, #{usertel,jdbcType=VARCHAR}, #{usercarttype,jdbcType=VARCHAR}, 
+      #{usercart,jdbcType=VARCHAR}, #{userstate,jdbcType=VARCHAR}, #{userpoints,jdbcType=INTEGER}, 
+      #{levelid,jdbcType=INTEGER}, #{useremail,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.czl.pojo.Userinfo" >
+    insert into userinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        UserId,
+      </if>
+      <if test="username != null" >
+        UserName,
+      </if>
+      <if test="userpass != null" >
+        UserPass,
+      </if>
+      <if test="usersex != null" >
+        UserSex,
+      </if>
+      <if test="usertel != null" >
+        UserTel,
+      </if>
+      <if test="usercarttype != null" >
+        UserCartType,
+      </if>
+      <if test="usercart != null" >
+        UserCart,
+      </if>
+      <if test="userstate != null" >
+        UserState,
+      </if>
+      <if test="userpoints != null" >
+        UserPoints,
+      </if>
+      <if test="levelid != null" >
+        levelID,
+      </if>
+      <if test="useremail != null" >
+        UserEmail,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="userpass != null" >
+        #{userpass,jdbcType=VARCHAR},
+      </if>
+      <if test="usersex != null" >
+        #{usersex,jdbcType=VARCHAR},
+      </if>
+      <if test="usertel != null" >
+        #{usertel,jdbcType=VARCHAR},
+      </if>
+      <if test="usercarttype != null" >
+        #{usercarttype,jdbcType=VARCHAR},
+      </if>
+      <if test="usercart != null" >
+        #{usercart,jdbcType=VARCHAR},
+      </if>
+      <if test="userstate != null" >
+        #{userstate,jdbcType=VARCHAR},
+      </if>
+      <if test="userpoints != null" >
+        #{userpoints,jdbcType=INTEGER},
+      </if>
+      <if test="levelid != null" >
+        #{levelid,jdbcType=INTEGER},
+      </if>
+      <if test="useremail != null" >
+        #{useremail,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.czl.pojo.UserinfoExample" resultType="java.lang.Integer" >
+    select count(*) from userinfo
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update userinfo
+    <set >
+      <if test="record.userid != null" >
+        UserId = #{record.userid,jdbcType=INTEGER},
+      </if>
+      <if test="record.username != null" >
+        UserName = #{record.username,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userpass != null" >
+        UserPass = #{record.userpass,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usersex != null" >
+        UserSex = #{record.usersex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usertel != null" >
+        UserTel = #{record.usertel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usercarttype != null" >
+        UserCartType = #{record.usercarttype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usercart != null" >
+        UserCart = #{record.usercart,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userstate != null" >
+        UserState = #{record.userstate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userpoints != null" >
+        UserPoints = #{record.userpoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.levelid != null" >
+        levelID = #{record.levelid,jdbcType=INTEGER},
+      </if>
+      <if test="record.useremail != null" >
+        UserEmail = #{record.useremail,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update userinfo
+    set UserId = #{record.userid,jdbcType=INTEGER},
+      UserName = #{record.username,jdbcType=VARCHAR},
+      UserPass = #{record.userpass,jdbcType=VARCHAR},
+      UserSex = #{record.usersex,jdbcType=VARCHAR},
+      UserTel = #{record.usertel,jdbcType=VARCHAR},
+      UserCartType = #{record.usercarttype,jdbcType=VARCHAR},
+      UserCart = #{record.usercart,jdbcType=VARCHAR},
+      UserState = #{record.userstate,jdbcType=VARCHAR},
+      UserPoints = #{record.userpoints,jdbcType=INTEGER},
+      levelID = #{record.levelid,jdbcType=INTEGER},
+      UserEmail = #{record.useremail,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.czl.pojo.Userinfo" >
+    update userinfo
+    <set >
+      <if test="username != null" >
+        UserName = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="userpass != null" >
+        UserPass = #{userpass,jdbcType=VARCHAR},
+      </if>
+      <if test="usersex != null" >
+        UserSex = #{usersex,jdbcType=VARCHAR},
+      </if>
+      <if test="usertel != null" >
+        UserTel = #{usertel,jdbcType=VARCHAR},
+      </if>
+      <if test="usercarttype != null" >
+        UserCartType = #{usercarttype,jdbcType=VARCHAR},
+      </if>
+      <if test="usercart != null" >
+        UserCart = #{usercart,jdbcType=VARCHAR},
+      </if>
+      <if test="userstate != null" >
+        UserState = #{userstate,jdbcType=VARCHAR},
+      </if>
+      <if test="userpoints != null" >
+        UserPoints = #{userpoints,jdbcType=INTEGER},
+      </if>
+      <if test="levelid != null" >
+        levelID = #{levelid,jdbcType=INTEGER},
+      </if>
+      <if test="useremail != null" >
+        UserEmail = #{useremail,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where UserId = #{userid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.czl.pojo.Userinfo" >
+    update userinfo
+    set UserName = #{username,jdbcType=VARCHAR},
+      UserPass = #{userpass,jdbcType=VARCHAR},
+      UserSex = #{usersex,jdbcType=VARCHAR},
+      UserTel = #{usertel,jdbcType=VARCHAR},
+      UserCartType = #{usercarttype,jdbcType=VARCHAR},
+      UserCart = #{usercart,jdbcType=VARCHAR},
+      UserState = #{userstate,jdbcType=VARCHAR},
+      UserPoints = #{userpoints,jdbcType=INTEGER},
+      levelID = #{levelid,jdbcType=INTEGER},
+      UserEmail = #{useremail,jdbcType=VARCHAR}
+    where UserId = #{userid,jdbcType=INTEGER}
+  </update>
+</mapper>
