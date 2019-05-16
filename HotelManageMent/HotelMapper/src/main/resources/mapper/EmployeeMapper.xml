@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.czl.mapper.EmployeeMapper" >
+  <resultMap id="BaseResultMap" type="com.czl.pojo.Employee" >
+    <id column="EmployeeId" property="employeeid" jdbcType="INTEGER" />
+    <result column="EmployeeName" property="employeename" jdbcType="VARCHAR" />
+    <result column="EmployeePass" property="employeepass" jdbcType="VARCHAR" />
+    <result column="EmployeeSex" property="employeesex" jdbcType="VARCHAR" />
+    <result column="EmployeeTel" property="employeetel" jdbcType="VARCHAR" />
+    <result column="EmployeeCartType" property="employeecarttype" jdbcType="VARCHAR" />
+    <result column="EmployeeCart" property="employeecart" jdbcType="VARCHAR" />
+    <result column="EmployeeState" property="employeestate" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    EmployeeId, EmployeeName, EmployeePass, EmployeeSex, EmployeeTel, EmployeeCartType, 
+    EmployeeCart, EmployeeState
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.czl.pojo.EmployeeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from employee
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from employee
+    where EmployeeId = #{employeeid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from employee
+    where EmployeeId = #{employeeid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.czl.pojo.EmployeeExample" >
+    delete from employee
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.czl.pojo.Employee" >
+    insert into employee (EmployeeId, EmployeeName, EmployeePass, 
+      EmployeeSex, EmployeeTel, EmployeeCartType, 
+      EmployeeCart, EmployeeState)
+    values (#{employeeid,jdbcType=INTEGER}, #{employeename,jdbcType=VARCHAR}, #{employeepass,jdbcType=VARCHAR}, 
+      #{employeesex,jdbcType=VARCHAR}, #{employeetel,jdbcType=VARCHAR}, #{employeecarttype,jdbcType=VARCHAR}, 
+      #{employeecart,jdbcType=VARCHAR}, #{employeestate,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.czl.pojo.Employee" >
+    insert into employee
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="employeeid != null" >
+        EmployeeId,
+      </if>
+      <if test="employeename != null" >
+        EmployeeName,
+      </if>
+      <if test="employeepass != null" >
+        EmployeePass,
+      </if>
+      <if test="employeesex != null" >
+        EmployeeSex,
+      </if>
+      <if test="employeetel != null" >
+        EmployeeTel,
+      </if>
+      <if test="employeecarttype != null" >
+        EmployeeCartType,
+      </if>
+      <if test="employeecart != null" >
+        EmployeeCart,
+      </if>
+      <if test="employeestate != null" >
+        EmployeeState,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="employeeid != null" >
+        #{employeeid,jdbcType=INTEGER},
+      </if>
+      <if test="employeename != null" >
+        #{employeename,jdbcType=VARCHAR},
+      </if>
+      <if test="employeepass != null" >
+        #{employeepass,jdbcType=VARCHAR},
+      </if>
+      <if test="employeesex != null" >
+        #{employeesex,jdbcType=VARCHAR},
+      </if>
+      <if test="employeetel != null" >
+        #{employeetel,jdbcType=VARCHAR},
+      </if>
+      <if test="employeecarttype != null" >
+        #{employeecarttype,jdbcType=VARCHAR},
+      </if>
+      <if test="employeecart != null" >
+        #{employeecart,jdbcType=VARCHAR},
+      </if>
+      <if test="employeestate != null" >
+        #{employeestate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.czl.pojo.EmployeeExample" resultType="java.lang.Integer" >
+    select count(*) from employee
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update employee
+    <set >
+      <if test="record.employeeid != null" >
+        EmployeeId = #{record.employeeid,jdbcType=INTEGER},
+      </if>
+      <if test="record.employeename != null" >
+        EmployeeName = #{record.employeename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeepass != null" >
+        EmployeePass = #{record.employeepass,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeesex != null" >
+        EmployeeSex = #{record.employeesex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeetel != null" >
+        EmployeeTel = #{record.employeetel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeecarttype != null" >
+        EmployeeCartType = #{record.employeecarttype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeecart != null" >
+        EmployeeCart = #{record.employeecart,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeestate != null" >
+        EmployeeState = #{record.employeestate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update employee
+    set EmployeeId = #{record.employeeid,jdbcType=INTEGER},
+      EmployeeName = #{record.employeename,jdbcType=VARCHAR},
+      EmployeePass = #{record.employeepass,jdbcType=VARCHAR},
+      EmployeeSex = #{record.employeesex,jdbcType=VARCHAR},
+      EmployeeTel = #{record.employeetel,jdbcType=VARCHAR},
+      EmployeeCartType = #{record.employeecarttype,jdbcType=VARCHAR},
+      EmployeeCart = #{record.employeecart,jdbcType=VARCHAR},
+      EmployeeState = #{record.employeestate,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.czl.pojo.Employee" >
+    update employee
+    <set >
+      <if test="employeename != null" >
+        EmployeeName = #{employeename,jdbcType=VARCHAR},
+      </if>
+      <if test="employeepass != null" >
+        EmployeePass = #{employeepass,jdbcType=VARCHAR},
+      </if>
+      <if test="employeesex != null" >
+        EmployeeSex = #{employeesex,jdbcType=VARCHAR},
+      </if>
+      <if test="employeetel != null" >
+        EmployeeTel = #{employeetel,jdbcType=VARCHAR},
+      </if>
+      <if test="employeecarttype != null" >
+        EmployeeCartType = #{employeecarttype,jdbcType=VARCHAR},
+      </if>
+      <if test="employeecart != null" >
+        EmployeeCart = #{employeecart,jdbcType=VARCHAR},
+      </if>
+      <if test="employeestate != null" >
+        EmployeeState = #{employeestate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where EmployeeId = #{employeeid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.czl.pojo.Employee" >
+    update employee
+    set EmployeeName = #{employeename,jdbcType=VARCHAR},
+      EmployeePass = #{employeepass,jdbcType=VARCHAR},
+      EmployeeSex = #{employeesex,jdbcType=VARCHAR},
+      EmployeeTel = #{employeetel,jdbcType=VARCHAR},
+      EmployeeCartType = #{employeecarttype,jdbcType=VARCHAR},
+      EmployeeCart = #{employeecart,jdbcType=VARCHAR},
+      EmployeeState = #{employeestate,jdbcType=VARCHAR}
+    where EmployeeId = #{employeeid,jdbcType=INTEGER}
+  </update>
+</mapper>

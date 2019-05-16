@@ -82,4 +82,652 @@ Root WebApplicationContext: initialization completed in 22549 ms
  [DUBBO] All clients has discontected from /192.168.124.1:20880. You can graceful shutdown now., dubbo version: 2.5.3, current host: 127.0.0.1
  [INFO ][2019/05/14 17:01:52192][com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol$1.disconnected(DubboProtocol.java:130)]
  [DUBBO] disconected from /192.168.124.1:54047,url:dubbo://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&channel.readonly.sent=true&codec=dubbo&dubbo=2.5.3&heartbeat=60000&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=10772&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557824364480, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:30:44453][org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:305)]
+Root WebApplicationContext: initialization started
+ [INFO ][2019/05/14 17:30:44511][org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582)]
+Refreshing Root WebApplicationContext: startup date [Tue May 14 17:30:44 CST 2019]; root of context hierarchy
+ [INFO ][2019/05/14 17:30:44567][org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)]
+Loading XML bean definitions from file [D:\IdeaProjects\HotelManageMent\HotelContent\HotelService\target\classes\spring-dubbo.xml]
+ [INFO ][2019/05/14 17:30:4536 ][]
+using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+ [INFO ][2019/05/14 17:30:4564 ][org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)]
+Loading XML bean definitions from file [D:\IdeaProjects\HotelManageMent\HotelContent\HotelService\target\classes\spring-mybatis.xml]
+ [INFO ][2019/05/14 17:30:45340][org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)]
+Loading properties file from class path resource [db.properties]
+ [INFO ][2019/05/14 17:30:45348][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)]
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO ][2019/05/14 17:30:4663 ][com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:107)]
+ [DUBBO] The service ready on spring started. service: com.czl.service.Eservice, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:30:46189][com.alibaba.dubbo.config.ServiceConfig.exportLocal(ServiceConfig.java:510)]
+ [DUBBO] Export dubbo service com.czl.service.Eservice to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:30:46189][com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:470)]
+ [DUBBO] Export dubbo service com.czl.service.Eservice to url dubbo://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=14404&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826246105, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:30:46190][com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:481)]
+ [DUBBO] Register dubbo service com.czl.service.Eservice url dubbo://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=14404&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826246105 to registry registry://10.12.159.133:2181/com.alibaba.dubbo.registry.RegistryService?application=ssmdubboservice&dubbo=2.5.3&pid=14404&registry=zookeeper&timestamp=1557826246071, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:30:46427][com.alibaba.dubbo.remoting.transport.AbstractServer.<init>(AbstractServer.java:69)]
+ [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /192.168.124.1:20880, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:30:46462][com.alibaba.dubbo.registry.support.AbstractRegistry.loadProperties(AbstractRegistry.java:232)]
+ [DUBBO] Load registry store file C:\Users\54762\.dubbo\dubbo-registry-10.12.159.133.cache, data: {com.czl.service.Eservice=empty://192.168.124.1/com.czl.service.Eservice?application=ssmdubboweb&category=configurators&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=12612&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1557824406962 empty://192.168.124.1/com.czl.service.Eservice?application=ssmdubboweb&category=routers&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=12612&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1557824406962 dubbo://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=10772&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557824364480, com.czl.service.UserInfoService=empty://192.168.124.1/com.czl.service.UserInfoService?application=ssmdubboweb&category=configurators&dubbo=2.5.3&interface=com.czl.service.UserInfoService&methods=getAllUsers&pid=1352&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1557816386404 empty://192.168.124.1/com.czl.service.UserInfoService?application=ssmdubboweb&category=routers&dubbo=2.5.3&interface=com.czl.service.UserInfoService&methods=getAllUsers&pid=1352&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1557816386404 dubbo://192.168.124.1:20880/com.czl.service.UserInfoService?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.UserInfoService&methods=getAllUsers&pid=14972&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557816340602}, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:30:46524][org.I0Itec.zkclient.ZkEventThread.run(ZkEventThread.java:64)]
+Starting ZkClient event thread.
+ [INFO ][2019/05/14 17:31:06563][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+ [INFO ][2019/05/14 17:31:06563][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:host.name=Sweet
+ [INFO ][2019/05/14 17:31:06564][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.version=1.8.0_51
+ [INFO ][2019/05/14 17:31:06565][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.vendor=Oracle Corporation
+ [INFO ][2019/05/14 17:31:06566][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.home=C:\Program Files\Java\jdk1.8.0_51\jre
+ [INFO ][2019/05/14 17:31:06566][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.class.path=D:\maven\apache-maven-3.6.0\boot\plexus-classworlds-2.5.2.jar;D:\Program Files\JetBrains\IntelliJ IDEA 2018.3.2\lib\idea_rt.jar
+ [INFO ][2019/05/14 17:31:06566][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.library.path=C:\Program Files\Java\jdk1.8.0_51\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_51\jre\bin;C:\Program Files\Java\jdk1.8.0_51\bin;D:\app\54762\product\11.2.0\dbhome_1\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\mysql-5.7.17-winx64\bin;D:\apache-maven-3.3.9\bin;D:\nginx-demo\Redis-x64-3.2.100\;D:\Program Files\Git\cmd;C:\Users\54762\AppData\Local\Microsoft\WindowsApps;;.
+ [INFO ][2019/05/14 17:31:06568][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.io.tmpdir=C:\Users\54762\AppData\Local\Temp\
+ [INFO ][2019/05/14 17:31:06569][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.compiler=<NA>
+ [INFO ][2019/05/14 17:31:06569][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:os.name=Windows 8.1
+ [INFO ][2019/05/14 17:31:06570][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:os.arch=amd64
+ [INFO ][2019/05/14 17:31:06571][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:os.version=6.3
+ [INFO ][2019/05/14 17:31:06571][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:user.name=54762
+ [INFO ][2019/05/14 17:31:06572][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:user.home=C:\Users\54762
+ [INFO ][2019/05/14 17:31:06573][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:user.dir=D:\IdeaProjects\HotelManageMent\HotelContent\HotelService
+ [INFO ][2019/05/14 17:31:06574][org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)]
+Initiating client connection, connectString=10.12.159.133:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@3092d979
+ [INFO ][2019/05/14 17:31:06605][org.I0Itec.zkclient.ZkClient.waitForKeeperState(ZkClient.java:934)]
+Waiting for keeper state SyncConnected
+ [INFO ][2019/05/14 17:31:06614][org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:975)]
+Opening socket connection to server 10.12.159.133/10.12.159.133:2181. Will not attempt to authenticate using SASL (unknown error)
+ [INFO ][2019/05/14 17:31:06619][org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:852)]
+Socket connection established to 10.12.159.133/10.12.159.133:2181, initiating session
+ [INFO ][2019/05/14 17:31:06630][org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1235)]
+Session establishment complete on server 10.12.159.133/10.12.159.133:2181, sessionid = 0x16ab41cdd250015, negotiated timeout = 30000
+ [INFO ][2019/05/14 17:31:06632][org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:711)]
+zookeeper state changed (SyncConnected)
+ [INFO ][2019/05/14 17:31:06634][com.alibaba.dubbo.registry.support.AbstractRegistry.register(AbstractRegistry.java:302)]
+ [DUBBO] Register: dubbo://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=14404&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826246105, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:31:06681][com.alibaba.dubbo.registry.support.AbstractRegistry.subscribe(AbstractRegistry.java:325)]
+ [DUBBO] Subscribe: provider://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=14404&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826246105, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:31:06719][com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)]
+ [DUBBO] Notify urls for subscribe url provider://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=14404&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826246105, urls: [empty://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=14404&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826246105], dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:31:06766][org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:345)]
+Root WebApplicationContext: initialization completed in 22311 ms
+ [INFO ][2019/05/14 17:32:04108][org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:305)]
+Root WebApplicationContext: initialization started
+ [INFO ][2019/05/14 17:32:04163][org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582)]
+Refreshing Root WebApplicationContext: startup date [Tue May 14 17:32:04 CST 2019]; root of context hierarchy
+ [INFO ][2019/05/14 17:32:04217][org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)]
+Loading XML bean definitions from file [D:\IdeaProjects\HotelManageMent\HotelContent\HotelService\target\classes\spring-dubbo.xml]
+ [INFO ][2019/05/14 17:32:04497][]
+using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+ [INFO ][2019/05/14 17:32:04525][org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)]
+Loading XML bean definitions from file [D:\IdeaProjects\HotelManageMent\HotelContent\HotelService\target\classes\spring-mybatis.xml]
+ [INFO ][2019/05/14 17:32:04856][org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)]
+Loading properties file from class path resource [db.properties]
+ [INFO ][2019/05/14 17:32:04865][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)]
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO ][2019/05/14 17:32:05858][com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:107)]
+ [DUBBO] The service ready on spring started. service: com.czl.service.Eservice, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:32:05997][com.alibaba.dubbo.config.ServiceConfig.exportLocal(ServiceConfig.java:510)]
+ [DUBBO] Export dubbo service com.czl.service.Eservice to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:32:05997][com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:470)]
+ [DUBBO] Export dubbo service com.czl.service.Eservice to url dubbo://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=928&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826325904, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:32:05997][com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:481)]
+ [DUBBO] Register dubbo service com.czl.service.Eservice url dubbo://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=928&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826325904 to registry registry://10.12.159.133:2181/com.alibaba.dubbo.registry.RegistryService?application=ssmdubboservice&dubbo=2.5.3&pid=928&registry=zookeeper&timestamp=1557826325869, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:32:06178][com.alibaba.dubbo.remoting.transport.AbstractServer.<init>(AbstractServer.java:69)]
+ [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /192.168.124.1:20880, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:32:06203][com.alibaba.dubbo.registry.support.AbstractRegistry.loadProperties(AbstractRegistry.java:232)]
+ [DUBBO] Load registry store file C:\Users\54762\.dubbo\dubbo-registry-10.12.159.133.cache, data: {com.czl.service.Eservice=empty://192.168.124.1/com.czl.service.Eservice?application=ssmdubboweb&category=configurators&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=4276&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1557826277082 empty://192.168.124.1/com.czl.service.Eservice?application=ssmdubboweb&category=routers&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=4276&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1557826277082 dubbo://192.168.245.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=13468&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557825459537 dubbo://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=14404&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826246105, com.czl.service.UserInfoService=empty://192.168.124.1/com.czl.service.UserInfoService?application=ssmdubboweb&category=configurators&dubbo=2.5.3&interface=com.czl.service.UserInfoService&methods=getAllUsers&pid=1352&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1557816386404 empty://192.168.124.1/com.czl.service.UserInfoService?application=ssmdubboweb&category=routers&dubbo=2.5.3&interface=com.czl.service.UserInfoService&methods=getAllUsers&pid=1352&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1557816386404 dubbo://192.168.124.1:20880/com.czl.service.UserInfoService?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.UserInfoService&methods=getAllUsers&pid=14972&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557816340602}, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:32:06217][org.I0Itec.zkclient.ZkEventThread.run(ZkEventThread.java:64)]
+Starting ZkClient event thread.
+ [INFO ][2019/05/14 17:32:26275][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+ [INFO ][2019/05/14 17:32:26275][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:host.name=Sweet
+ [INFO ][2019/05/14 17:32:26276][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.version=1.8.0_51
+ [INFO ][2019/05/14 17:32:26276][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.vendor=Oracle Corporation
+ [INFO ][2019/05/14 17:32:26277][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.home=C:\Program Files\Java\jdk1.8.0_51\jre
+ [INFO ][2019/05/14 17:32:26277][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.class.path=D:\maven\apache-maven-3.6.0\boot\plexus-classworlds-2.5.2.jar;D:\Program Files\JetBrains\IntelliJ IDEA 2018.3.2\lib\idea_rt.jar
+ [INFO ][2019/05/14 17:32:26278][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.library.path=C:\Program Files\Java\jdk1.8.0_51\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_51\jre\bin;C:\Program Files\Java\jdk1.8.0_51\bin;D:\app\54762\product\11.2.0\dbhome_1\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\mysql-5.7.17-winx64\bin;D:\apache-maven-3.3.9\bin;D:\nginx-demo\Redis-x64-3.2.100\;D:\Program Files\Git\cmd;C:\Users\54762\AppData\Local\Microsoft\WindowsApps;;.
+ [INFO ][2019/05/14 17:32:26278][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.io.tmpdir=C:\Users\54762\AppData\Local\Temp\
+ [INFO ][2019/05/14 17:32:26278][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.compiler=<NA>
+ [INFO ][2019/05/14 17:32:26278][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:os.name=Windows 8.1
+ [INFO ][2019/05/14 17:32:26279][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:os.arch=amd64
+ [INFO ][2019/05/14 17:32:26279][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:os.version=6.3
+ [INFO ][2019/05/14 17:32:26279][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:user.name=54762
+ [INFO ][2019/05/14 17:32:26279][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:user.home=C:\Users\54762
+ [INFO ][2019/05/14 17:32:26280][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:user.dir=D:\IdeaProjects\HotelManageMent\HotelContent\HotelService
+ [INFO ][2019/05/14 17:32:26281][org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)]
+Initiating client connection, connectString=10.12.159.133:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@3c0658c5
+ [INFO ][2019/05/14 17:32:26303][org.I0Itec.zkclient.ZkClient.waitForKeeperState(ZkClient.java:934)]
+Waiting for keeper state SyncConnected
+ [INFO ][2019/05/14 17:32:26346][org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:975)]
+Opening socket connection to server 10.12.159.133/10.12.159.133:2181. Will not attempt to authenticate using SASL (unknown error)
+ [INFO ][2019/05/14 17:32:26349][org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:852)]
+Socket connection established to 10.12.159.133/10.12.159.133:2181, initiating session
+ [INFO ][2019/05/14 17:32:26389][org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1235)]
+Session establishment complete on server 10.12.159.133/10.12.159.133:2181, sessionid = 0x16ab41cdd250017, negotiated timeout = 30000
+ [INFO ][2019/05/14 17:32:26393][org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:711)]
+zookeeper state changed (SyncConnected)
+ [INFO ][2019/05/14 17:32:26395][com.alibaba.dubbo.registry.support.AbstractRegistry.register(AbstractRegistry.java:302)]
+ [DUBBO] Register: dubbo://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=928&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826325904, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:32:26431][com.alibaba.dubbo.registry.support.AbstractRegistry.subscribe(AbstractRegistry.java:325)]
+ [DUBBO] Subscribe: provider://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=928&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826325904, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:32:26450][com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)]
+ [DUBBO] Notify urls for subscribe url provider://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=928&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826325904, urls: [empty://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=928&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826325904], dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:32:26503][org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:345)]
+Root WebApplicationContext: initialization completed in 22393 ms
+ [INFO ][2019/05/14 17:35:02211][org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:305)]
+Root WebApplicationContext: initialization started
+ [INFO ][2019/05/14 17:35:02277][org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582)]
+Refreshing Root WebApplicationContext: startup date [Tue May 14 17:35:02 CST 2019]; root of context hierarchy
+ [INFO ][2019/05/14 17:35:02344][org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)]
+Loading XML bean definitions from file [D:\IdeaProjects\HotelManageMent\HotelContent\HotelService\target\classes\spring-dubbo.xml]
+ [INFO ][2019/05/14 17:35:02607][]
+using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+ [INFO ][2019/05/14 17:35:02642][org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)]
+Loading XML bean definitions from file [D:\IdeaProjects\HotelManageMent\HotelContent\HotelService\target\classes\spring-mybatis.xml]
+ [INFO ][2019/05/14 17:35:02884][org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)]
+Loading properties file from class path resource [db.properties]
+ [INFO ][2019/05/14 17:35:02891][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)]
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO ][2019/05/14 17:35:03901][com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:107)]
+ [DUBBO] The service ready on spring started. service: com.czl.service.Eservice, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:35:0449 ][com.alibaba.dubbo.config.ServiceConfig.exportLocal(ServiceConfig.java:510)]
+ [DUBBO] Export dubbo service com.czl.service.Eservice to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:35:0450 ][com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:470)]
+ [DUBBO] Export dubbo service com.czl.service.Eservice to url dubbo://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=1488&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826503948, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:35:0450 ][com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:481)]
+ [DUBBO] Register dubbo service com.czl.service.Eservice url dubbo://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=1488&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826503948 to registry registry://10.12.159.133:2181/com.alibaba.dubbo.registry.RegistryService?application=ssmdubboservice&dubbo=2.5.3&pid=1488&registry=zookeeper&timestamp=1557826503909, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:35:04265][com.alibaba.dubbo.remoting.transport.AbstractServer.<init>(AbstractServer.java:69)]
+ [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /192.168.124.1:20880, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:35:04290][com.alibaba.dubbo.registry.support.AbstractRegistry.loadProperties(AbstractRegistry.java:232)]
+ [DUBBO] Load registry store file C:\Users\54762\.dubbo\dubbo-registry-10.12.159.133.cache, data: {com.czl.service.Eservice=empty://192.168.124.1/com.czl.service.Eservice?application=ssmdubboweb&category=configurators&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=2908&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1557826405788 empty://192.168.124.1/com.czl.service.Eservice?application=ssmdubboweb&category=routers&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=2908&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1557826405788 dubbo://192.168.245.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=13468&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557825459537 dubbo://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=928&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826325904, com.czl.service.UserInfoService=empty://192.168.124.1/com.czl.service.UserInfoService?application=ssmdubboweb&category=configurators&dubbo=2.5.3&interface=com.czl.service.UserInfoService&methods=getAllUsers&pid=1352&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1557816386404 empty://192.168.124.1/com.czl.service.UserInfoService?application=ssmdubboweb&category=routers&dubbo=2.5.3&interface=com.czl.service.UserInfoService&methods=getAllUsers&pid=1352&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1557816386404 dubbo://192.168.124.1:20880/com.czl.service.UserInfoService?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.UserInfoService&methods=getAllUsers&pid=14972&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557816340602}, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:35:04307][org.I0Itec.zkclient.ZkEventThread.run(ZkEventThread.java:64)]
+Starting ZkClient event thread.
+ [INFO ][2019/05/14 17:35:24354][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+ [INFO ][2019/05/14 17:35:24355][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:host.name=Sweet
+ [INFO ][2019/05/14 17:35:24355][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.version=1.8.0_51
+ [INFO ][2019/05/14 17:35:24356][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.vendor=Oracle Corporation
+ [INFO ][2019/05/14 17:35:24356][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.home=C:\Program Files\Java\jdk1.8.0_51\jre
+ [INFO ][2019/05/14 17:35:24357][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.class.path=D:\maven\apache-maven-3.6.0\boot\plexus-classworlds-2.5.2.jar;D:\Program Files\JetBrains\IntelliJ IDEA 2018.3.2\lib\idea_rt.jar
+ [INFO ][2019/05/14 17:35:24357][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.library.path=C:\Program Files\Java\jdk1.8.0_51\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_51\jre\bin;C:\Program Files\Java\jdk1.8.0_51\bin;D:\app\54762\product\11.2.0\dbhome_1\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\mysql-5.7.17-winx64\bin;D:\apache-maven-3.3.9\bin;D:\nginx-demo\Redis-x64-3.2.100\;D:\Program Files\Git\cmd;C:\Users\54762\AppData\Local\Microsoft\WindowsApps;;.
+ [INFO ][2019/05/14 17:35:24357][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.io.tmpdir=C:\Users\54762\AppData\Local\Temp\
+ [INFO ][2019/05/14 17:35:24358][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.compiler=<NA>
+ [INFO ][2019/05/14 17:35:24358][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:os.name=Windows 8.1
+ [INFO ][2019/05/14 17:35:24358][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:os.arch=amd64
+ [INFO ][2019/05/14 17:35:24358][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:os.version=6.3
+ [INFO ][2019/05/14 17:35:24359][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:user.name=54762
+ [INFO ][2019/05/14 17:35:24359][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:user.home=C:\Users\54762
+ [INFO ][2019/05/14 17:35:24359][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:user.dir=D:\IdeaProjects\HotelManageMent\HotelContent\HotelService
+ [INFO ][2019/05/14 17:35:24361][org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)]
+Initiating client connection, connectString=10.12.159.133:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@5757b560
+ [INFO ][2019/05/14 17:35:24381][org.I0Itec.zkclient.ZkClient.waitForKeeperState(ZkClient.java:934)]
+Waiting for keeper state SyncConnected
+ [INFO ][2019/05/14 17:35:24392][org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:975)]
+Opening socket connection to server 10.12.159.133/10.12.159.133:2181. Will not attempt to authenticate using SASL (unknown error)
+ [INFO ][2019/05/14 17:35:24395][org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:852)]
+Socket connection established to 10.12.159.133/10.12.159.133:2181, initiating session
+ [INFO ][2019/05/14 17:35:24426][org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1235)]
+Session establishment complete on server 10.12.159.133/10.12.159.133:2181, sessionid = 0x16ab41cdd250019, negotiated timeout = 30000
+ [INFO ][2019/05/14 17:35:24427][org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:711)]
+zookeeper state changed (SyncConnected)
+ [INFO ][2019/05/14 17:35:24429][com.alibaba.dubbo.registry.support.AbstractRegistry.register(AbstractRegistry.java:302)]
+ [DUBBO] Register: dubbo://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=1488&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826503948, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:35:24455][com.alibaba.dubbo.registry.support.AbstractRegistry.subscribe(AbstractRegistry.java:325)]
+ [DUBBO] Subscribe: provider://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=1488&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826503948, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:35:24479][com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)]
+ [DUBBO] Notify urls for subscribe url provider://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=1488&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826503948, urls: [empty://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=1488&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826503948], dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:35:24508][org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:345)]
+Root WebApplicationContext: initialization completed in 22294 ms
+ [INFO ][2019/05/14 17:37:01428][org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:305)]
+Root WebApplicationContext: initialization started
+ [INFO ][2019/05/14 17:37:01495][org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582)]
+Refreshing Root WebApplicationContext: startup date [Tue May 14 17:37:01 CST 2019]; root of context hierarchy
+ [INFO ][2019/05/14 17:37:01579][org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)]
+Loading XML bean definitions from file [D:\IdeaProjects\HotelManageMent\HotelContent\HotelService\target\classes\spring-dubbo.xml]
+ [INFO ][2019/05/14 17:37:01810][]
+using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+ [INFO ][2019/05/14 17:37:01845][org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)]
+Loading XML bean definitions from file [D:\IdeaProjects\HotelManageMent\HotelContent\HotelService\target\classes\spring-mybatis.xml]
+ [INFO ][2019/05/14 17:37:0267 ][org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)]
+Loading properties file from class path resource [db.properties]
+ [INFO ][2019/05/14 17:37:0274 ][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)]
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO ][2019/05/14 17:37:02833][com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:107)]
+ [DUBBO] The service ready on spring started. service: com.czl.service.Eservice, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:37:02982][com.alibaba.dubbo.config.ServiceConfig.exportLocal(ServiceConfig.java:510)]
+ [DUBBO] Export dubbo service com.czl.service.Eservice to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:37:02983][com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:470)]
+ [DUBBO] Export dubbo service com.czl.service.Eservice to url dubbo://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=11884&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826622874, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:37:02983][com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:481)]
+ [DUBBO] Register dubbo service com.czl.service.Eservice url dubbo://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=11884&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826622874 to registry registry://10.12.159.133:2181/com.alibaba.dubbo.registry.RegistryService?application=ssmdubboservice&dubbo=2.5.3&pid=11884&registry=zookeeper&timestamp=1557826622840, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:37:03163][com.alibaba.dubbo.remoting.transport.AbstractServer.<init>(AbstractServer.java:69)]
+ [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /192.168.124.1:20880, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:37:03184][com.alibaba.dubbo.registry.support.AbstractRegistry.loadProperties(AbstractRegistry.java:232)]
+ [DUBBO] Load registry store file C:\Users\54762\.dubbo\dubbo-registry-10.12.159.133.cache, data: {com.czl.service.Eservice=empty://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=1488&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826503948, com.czl.service.UserInfoService=empty://192.168.124.1/com.czl.service.UserInfoService?application=ssmdubboweb&category=configurators&dubbo=2.5.3&interface=com.czl.service.UserInfoService&methods=getAllUsers&pid=1352&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1557816386404 empty://192.168.124.1/com.czl.service.UserInfoService?application=ssmdubboweb&category=routers&dubbo=2.5.3&interface=com.czl.service.UserInfoService&methods=getAllUsers&pid=1352&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1557816386404 dubbo://192.168.124.1:20880/com.czl.service.UserInfoService?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.UserInfoService&methods=getAllUsers&pid=14972&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557816340602}, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:37:03198][org.I0Itec.zkclient.ZkEventThread.run(ZkEventThread.java:64)]
+Starting ZkClient event thread.
+ [INFO ][2019/05/14 17:37:23244][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+ [INFO ][2019/05/14 17:37:23244][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:host.name=Sweet
+ [INFO ][2019/05/14 17:37:23245][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.version=1.8.0_51
+ [INFO ][2019/05/14 17:37:23246][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.vendor=Oracle Corporation
+ [INFO ][2019/05/14 17:37:23246][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.home=C:\Program Files\Java\jdk1.8.0_51\jre
+ [INFO ][2019/05/14 17:37:23246][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.class.path=D:\maven\apache-maven-3.6.0\boot\plexus-classworlds-2.5.2.jar;D:\Program Files\JetBrains\IntelliJ IDEA 2018.3.2\lib\idea_rt.jar
+ [INFO ][2019/05/14 17:37:23247][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.library.path=C:\Program Files\Java\jdk1.8.0_51\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk1.8.0_51\jre\bin;C:\Program Files\Java\jdk1.8.0_51\bin;D:\app\54762\product\11.2.0\dbhome_1\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\mysql-5.7.17-winx64\bin;D:\apache-maven-3.3.9\bin;D:\nginx-demo\Redis-x64-3.2.100\;D:\Program Files\Git\cmd;C:\Users\54762\AppData\Local\Microsoft\WindowsApps;;.
+ [INFO ][2019/05/14 17:37:23247][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.io.tmpdir=C:\Users\54762\AppData\Local\Temp\
+ [INFO ][2019/05/14 17:37:23247][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.compiler=<NA>
+ [INFO ][2019/05/14 17:37:23248][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:os.name=Windows 8.1
+ [INFO ][2019/05/14 17:37:23248][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:os.arch=amd64
+ [INFO ][2019/05/14 17:37:23248][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:os.version=6.3
+ [INFO ][2019/05/14 17:37:23248][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:user.name=54762
+ [INFO ][2019/05/14 17:37:23249][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:user.home=C:\Users\54762
+ [INFO ][2019/05/14 17:37:23249][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:user.dir=D:\IdeaProjects\HotelManageMent\HotelContent\HotelService
+ [INFO ][2019/05/14 17:37:23251][org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)]
+Initiating client connection, connectString=10.12.159.133:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@4d5fe4a
+ [INFO ][2019/05/14 17:37:23273][org.I0Itec.zkclient.ZkClient.waitForKeeperState(ZkClient.java:934)]
+Waiting for keeper state SyncConnected
+ [INFO ][2019/05/14 17:37:23281][org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:975)]
+Opening socket connection to server 10.12.159.133/10.12.159.133:2181. Will not attempt to authenticate using SASL (unknown error)
+ [INFO ][2019/05/14 17:37:23284][org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:852)]
+Socket connection established to 10.12.159.133/10.12.159.133:2181, initiating session
+ [INFO ][2019/05/14 17:37:23293][org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1235)]
+Session establishment complete on server 10.12.159.133/10.12.159.133:2181, sessionid = 0x16ab41cdd25001a, negotiated timeout = 30000
+ [INFO ][2019/05/14 17:37:23296][org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:711)]
+zookeeper state changed (SyncConnected)
+ [INFO ][2019/05/14 17:37:23298][com.alibaba.dubbo.registry.support.AbstractRegistry.register(AbstractRegistry.java:302)]
+ [DUBBO] Register: dubbo://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=11884&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826622874, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:37:23329][com.alibaba.dubbo.registry.support.AbstractRegistry.subscribe(AbstractRegistry.java:325)]
+ [DUBBO] Subscribe: provider://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=11884&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826622874, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:37:23361][com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)]
+ [DUBBO] Notify urls for subscribe url provider://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=11884&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826622874, urls: [empty://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=11884&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826622874], dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 17:37:23394][org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:345)]
+Root WebApplicationContext: initialization completed in 21964 ms
+ [WARN ][2019/05/14 18:01:22819][com.alibaba.dubbo.remoting.transport.AbstractServer.disconnected(AbstractServer.java:197)]
+ [DUBBO] All clients has discontected from /192.168.124.1:20880. You can graceful shutdown now., dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 18:01:22820][com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol$1.disconnected(DubboProtocol.java:130)]
+ [DUBBO] disconected from /192.168.124.1:54923,url:dubbo://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&channel.readonly.sent=true&codec=dubbo&dubbo=2.5.3&heartbeat=60000&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=11884&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826622874, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 18:02:35773][com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:785)]
+{dataSource-1} inited
+ [WARN ][2019/05/14 18:03:42199][com.alibaba.dubbo.remoting.transport.AbstractServer.disconnected(AbstractServer.java:197)]
+ [DUBBO] All clients has discontected from /192.168.124.1:20880. You can graceful shutdown now., dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/14 18:03:42201][com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol$1.disconnected(DubboProtocol.java:130)]
+ [DUBBO] disconected from /192.168.124.1:56814,url:dubbo://192.168.124.1:20880/com.czl.service.Eservice?anyhost=true&application=ssmdubboservice&channel.readonly.sent=true&codec=dubbo&dubbo=2.5.3&heartbeat=60000&interface=com.czl.service.Eservice&methods=getAllEmployee&pid=11884&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557826622874, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:47:55828][org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:305)]
+Root WebApplicationContext: initialization started
+ [INFO ][2019/05/16 11:47:55859][org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582)]
+Refreshing Root WebApplicationContext: startup date [Thu May 16 11:47:55 CST 2019]; root of context hierarchy
+ [INFO ][2019/05/16 11:47:55885][org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)]
+Loading XML bean definitions from file [D:\IdeaProjects\HotelManageMent\HotelManageMent\HotelContent\HotelService\target\classes\spring-dubbo.xml]
+ [ERROR][2019/05/16 11:47:55937][org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:351)]
+Context initialization failed
+ org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 12 in XML document from file [D:\IdeaProjects\HotelManageMent\HotelManageMent\HotelContent\HotelService\target\classes\spring-dubbo.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 12; columnNumber: 2; 元素内容必须由格式正确的字符数据或标记组成。
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:399)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:613)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:514)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:444)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:326)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 12; columnNumber: 2; 元素内容必须由格式正确的字符数据或标记组成。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1437)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.startOfMarkup(XMLDocumentFragmentScannerImpl.java:2636)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2734)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:117)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:348)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:76)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:429)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:391)
+	... 22 more
+[INFO ][2019/05/16 11:47:55949][org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:987)]
+Closing Root WebApplicationContext: startup date [Thu May 16 11:47:55 CST 2019]; root of context hierarchy
+ [WARN ][2019/05/16 11:47:55949][org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1005)]
+Exception thrown from LifecycleProcessor on context close
+ java.lang.IllegalStateException: LifecycleProcessor not initialized - call 'refresh' before invoking lifecycle methods via the context: Root WebApplicationContext: startup date [Thu May 16 11:47:55 CST 2019]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getLifecycleProcessor(AbstractApplicationContext.java:417)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1002)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:961)
+	at org.springframework.web.context.ContextLoader.closeWebApplicationContext(ContextLoader.java:581)
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:116)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4980)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5626)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:232)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:160)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[INFO ][2019/05/16 11:48:51107][org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:305)]
+Root WebApplicationContext: initialization started
+ [INFO ][2019/05/16 11:48:51138][org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582)]
+Refreshing Root WebApplicationContext: startup date [Thu May 16 11:48:51 CST 2019]; root of context hierarchy
+ [INFO ][2019/05/16 11:48:51166][org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)]
+Loading XML bean definitions from file [D:\IdeaProjects\HotelManageMent\HotelManageMent\HotelContent\HotelService\target\classes\spring-dubbo.xml]
+ [INFO ][2019/05/16 11:48:51277][]
+using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+ [INFO ][2019/05/16 11:48:51294][org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)]
+Loading XML bean definitions from file [D:\IdeaProjects\HotelManageMent\HotelManageMent\HotelContent\HotelService\target\classes\spring-mybatis.xml]
+ [INFO ][2019/05/16 11:48:51418][org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)]
+Loading properties file from class path resource [db.properties]
+ [INFO ][2019/05/16 11:48:51422][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)]
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [WARN ][2019/05/16 11:48:51986][org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)]
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.czl.service.UserInfoService': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Duplicate application configs: <dubbo:application name="ssmdubboservice" id="ssmdubboservice" /> and <dubbo:application name="HotelService" id="HotelService" />
+ [ERROR][2019/05/16 11:48:51987][org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:351)]
+Context initialization failed
+ org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.czl.service.UserInfoService': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Duplicate application configs: <dubbo:application name="ssmdubboservice" id="ssmdubboservice" /> and <dubbo:application name="HotelService" id="HotelService" />
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:444)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:326)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Duplicate application configs: <dubbo:application name="ssmdubboservice" id="ssmdubboservice" /> and <dubbo:application name="HotelService" id="HotelService" />
+	at com.alibaba.dubbo.config.spring.ServiceBean.afterPropertiesSet(ServiceBean.java:164)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 21 more
+[INFO ][2019/05/16 11:49:04974][org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:305)]
+Root WebApplicationContext: initialization started
+ [INFO ][2019/05/16 11:49:058  ][org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582)]
+Refreshing Root WebApplicationContext: startup date [Thu May 16 11:49:05 CST 2019]; root of context hierarchy
+ [INFO ][2019/05/16 11:49:0535 ][org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)]
+Loading XML bean definitions from file [D:\IdeaProjects\HotelManageMent\HotelManageMent\HotelContent\HotelService\target\classes\spring-dubbo.xml]
+ [INFO ][2019/05/16 11:49:05148][]
+using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+ [INFO ][2019/05/16 11:49:05168][org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)]
+Loading XML bean definitions from file [D:\IdeaProjects\HotelManageMent\HotelManageMent\HotelContent\HotelService\target\classes\spring-mybatis.xml]
+ [INFO ][2019/05/16 11:49:05297][org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)]
+Loading properties file from class path resource [db.properties]
+ [INFO ][2019/05/16 11:49:05302][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)]
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [WARN ][2019/05/16 11:49:05844][org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)]
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.czl.service.UserInfoService': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Duplicate application configs: <dubbo:application name="ssmdubboservice" id="ssmdubboservice" /> and <dubbo:application name="HotelService" id="HotelService" />
+ [ERROR][2019/05/16 11:49:05845][org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:351)]
+Context initialization failed
+ org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.czl.service.UserInfoService': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Duplicate application configs: <dubbo:application name="ssmdubboservice" id="ssmdubboservice" /> and <dubbo:application name="HotelService" id="HotelService" />
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:444)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:326)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Duplicate application configs: <dubbo:application name="ssmdubboservice" id="ssmdubboservice" /> and <dubbo:application name="HotelService" id="HotelService" />
+	at com.alibaba.dubbo.config.spring.ServiceBean.afterPropertiesSet(ServiceBean.java:164)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 21 more
+[INFO ][2019/05/16 11:50:06603][org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:305)]
+Root WebApplicationContext: initialization started
+ [INFO ][2019/05/16 11:50:06637][org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582)]
+Refreshing Root WebApplicationContext: startup date [Thu May 16 11:50:06 CST 2019]; root of context hierarchy
+ [INFO ][2019/05/16 11:50:06664][org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)]
+Loading XML bean definitions from file [D:\IdeaProjects\HotelManageMent\HotelManageMent\HotelContent\HotelService\target\classes\spring-dubbo.xml]
+ [INFO ][2019/05/16 11:50:06773][]
+using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+ [INFO ][2019/05/16 11:50:06792][org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)]
+Loading XML bean definitions from file [D:\IdeaProjects\HotelManageMent\HotelManageMent\HotelContent\HotelService\target\classes\spring-mybatis.xml]
+ [INFO ][2019/05/16 11:50:06922][org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)]
+Loading properties file from class path resource [db.properties]
+ [INFO ][2019/05/16 11:50:06927][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)]
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [WARN ][2019/05/16 11:50:07453][org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)]
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.czl.service.UserInfoService': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Duplicate application configs: <dubbo:application name="ssmdubboservice" id="ssmdubboservice" /> and <dubbo:application name="HotelService" id="HotelService" />
+ [ERROR][2019/05/16 11:50:07455][org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:351)]
+Context initialization failed
+ org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.czl.service.UserInfoService': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Duplicate application configs: <dubbo:application name="ssmdubboservice" id="ssmdubboservice" /> and <dubbo:application name="HotelService" id="HotelService" />
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:444)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:326)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalStateException: Duplicate application configs: <dubbo:application name="ssmdubboservice" id="ssmdubboservice" /> and <dubbo:application name="HotelService" id="HotelService" />
+	at com.alibaba.dubbo.config.spring.ServiceBean.afterPropertiesSet(ServiceBean.java:164)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 21 more
+[INFO ][2019/05/16 11:51:14409][org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:305)]
+Root WebApplicationContext: initialization started
+ [INFO ][2019/05/16 11:51:14448][org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582)]
+Refreshing Root WebApplicationContext: startup date [Thu May 16 11:51:14 CST 2019]; root of context hierarchy
+ [INFO ][2019/05/16 11:51:14476][org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)]
+Loading XML bean definitions from file [D:\IdeaProjects\HotelManageMent\HotelManageMent\HotelContent\HotelService\target\classes\spring-dubbo.xml]
+ [INFO ][2019/05/16 11:51:14619][]
+using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+ [INFO ][2019/05/16 11:51:14638][org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)]
+Loading XML bean definitions from file [D:\IdeaProjects\HotelManageMent\HotelManageMent\HotelContent\HotelService\target\classes\spring-mybatis.xml]
+ [INFO ][2019/05/16 11:51:14790][org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)]
+Loading properties file from class path resource [db.properties]
+ [INFO ][2019/05/16 11:51:14795][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)]
+JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO ][2019/05/16 11:51:15423][com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:107)]
+ [DUBBO] The service ready on spring started. service: com.czl.service.RoommanageService, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:15496][com.alibaba.dubbo.config.ServiceConfig.exportLocal(ServiceConfig.java:510)]
+ [DUBBO] Export dubbo service com.czl.service.RoommanageService to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:15497][com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:470)]
+ [DUBBO] Export dubbo service com.czl.service.RoommanageService to url dubbo://192.168.56.1:20880/com.czl.service.RoommanageService?anyhost=true&application=HotelService&dubbo=2.5.3&interface=com.czl.service.RoommanageService&methods=selectByExample,updateByExample,selectByPrimaryKey,countByExample,insertSelective,deleteByExample,updateByExampleSelective,updateByPrimaryKeySelective,updateByPrimaryKey,insert,deleteByPrimaryKey&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978675444, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:15497][com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:481)]
+ [DUBBO] Register dubbo service com.czl.service.RoommanageService url dubbo://192.168.56.1:20880/com.czl.service.RoommanageService?anyhost=true&application=HotelService&dubbo=2.5.3&interface=com.czl.service.RoommanageService&methods=selectByExample,updateByExample,selectByPrimaryKey,countByExample,insertSelective,deleteByExample,updateByExampleSelective,updateByPrimaryKeySelective,updateByPrimaryKey,insert,deleteByPrimaryKey&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978675444 to registry registry://10.12.159.156:2181/com.alibaba.dubbo.registry.RegistryService?application=HotelService&dubbo=2.5.3&pid=1724&registry=zookeeper&timestamp=1557978675427, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:15588][com.alibaba.dubbo.remoting.transport.AbstractServer.<init>(AbstractServer.java:69)]
+ [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /192.168.56.1:20880, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:15600][com.alibaba.dubbo.registry.support.AbstractRegistry.loadProperties(AbstractRegistry.java:232)]
+ [DUBBO] Load registry store file C:\Users\30875\.dubbo\dubbo-registry-10.12.159.156.cache, data: {com.czl.service.RoommanageService=empty://192.168.56.1/com.czl.service.RoommanageService?application=HotelManageWeb&category=configurators&dubbo=2.5.3&interface=com.czl.service.RoommanageService&methods=selectByExample,updateByExample,selectByPrimaryKey,insertSelective,countByExample,deleteByExample,updateByExampleSelective,updateByPrimaryKeySelective,updateByPrimaryKey,insert,deleteByPrimaryKey&pid=16972&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1557977482719 empty://192.168.56.1/com.czl.service.RoommanageService?application=HotelManageWeb&category=routers&dubbo=2.5.3&interface=com.czl.service.RoommanageService&methods=selectByExample,updateByExample,selectByPrimaryKey,insertSelective,countByExample,deleteByExample,updateByExampleSelective,updateByPrimaryKeySelective,updateByPrimaryKey,insert,deleteByPrimaryKey&pid=16972&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1557977482719 dubbo://192.168.56.1:20880/com.czl.service.RoommanageService?anyhost=true&application=HotelService&dubbo=2.5.3&interface=com.czl.service.RoommanageService&methods=selectByExample,updateByExample,selectByPrimaryKey,countByExample,insertSelective,deleteByExample,updateByExampleSelective,updateByPrimaryKeySelective,updateByPrimaryKey,insert,deleteByPrimaryKey&pid=16012&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557977462325, com.czl.service.RoomAndTypeService=empty://192.168.56.1/com.czl.service.RoomAndTypeService?application=HotelManageWeb&category=configurators&dubbo=2.5.3&interface=com.czl.service.RoomAndTypeService&methods=selectAllRoomAndType&pid=16972&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1557977492194 empty://192.168.56.1/com.czl.service.RoomAndTypeService?application=HotelManageWeb&category=routers&dubbo=2.5.3&interface=com.czl.service.RoomAndTypeService&methods=selectAllRoomAndType&pid=16972&revision=0.0.1-SNAPSHOT&side=consumer&timestamp=1557977492194 dubbo://192.168.56.1:20880/com.czl.service.RoomAndTypeService?anyhost=true&application=HotelService&dubbo=2.5.3&interface=com.czl.service.RoomAndTypeService&methods=selectAllRoomAndType&pid=16012&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557977472708}, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:15610][org.I0Itec.zkclient.ZkEventThread.run(ZkEventThread.java:64)]
+Starting ZkClient event thread.
+ [INFO ][2019/05/16 11:51:25769][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+ [INFO ][2019/05/16 11:51:25769][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:host.name=lzx
+ [INFO ][2019/05/16 11:51:25769][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.version=1.8.0_51
+ [INFO ][2019/05/16 11:51:25770][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.vendor=Oracle Corporation
+ [INFO ][2019/05/16 11:51:25770][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.home=C:\Program Files\Java\jdk1.8.0_51\jre
+ [INFO ][2019/05/16 11:51:25770][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.class.path=D:\qf\1808\3jieduan\apache-maven-3.6.0\boot\plexus-classworlds-2.5.2.jar;D:\qf\1808\3jieduan\IntelliJ IDEA 2018.3.2\lib\idea_rt.jar
+ [INFO ][2019/05/16 11:51:25770][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.library.path=C:\Program Files\Java\jdk1.8.0_51\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\qf\1808\3jieduan\oracle\product\11.2.0\dbhome_1\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Java\jdk1.8.0_51\bin;C:\Program Files\Java\jdk1.8.0_51\bin;D:\mysql-5.7.17-winx64\bin;D:\qf\1808\3jieduan\apache-maven-3.3.9\bin;D:\Program Files\Git\cmd;C:\Users\30875\AppData\Local\Microsoft\WindowsApps;;.
+ [INFO ][2019/05/16 11:51:25771][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.io.tmpdir=C:\Users\30875\AppData\Local\Temp\
+ [INFO ][2019/05/16 11:51:25771][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:java.compiler=<NA>
+ [INFO ][2019/05/16 11:51:25771][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:os.name=Windows 8.1
+ [INFO ][2019/05/16 11:51:25771][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:os.arch=amd64
+ [INFO ][2019/05/16 11:51:25771][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:os.version=6.3
+ [INFO ][2019/05/16 11:51:25772][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:user.name=30875
+ [INFO ][2019/05/16 11:51:25772][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:user.home=C:\Users\30875
+ [INFO ][2019/05/16 11:51:25772][org.apache.zookeeper.Environment.logEnv(Environment.java:100)]
+Client environment:user.dir=D:\IdeaProjects\HotelManageMent\HotelManageMent\HotelContent\HotelService
+ [INFO ][2019/05/16 11:51:25773][org.apache.zookeeper.ZooKeeper.<init>(ZooKeeper.java:438)]
+Initiating client connection, connectString=10.12.159.156:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@29173b3e
+ [INFO ][2019/05/16 11:51:25782][org.I0Itec.zkclient.ZkClient.waitForKeeperState(ZkClient.java:934)]
+Waiting for keeper state SyncConnected
+ [INFO ][2019/05/16 11:51:25786][org.apache.zookeeper.ClientCnxn$SendThread.logStartConnect(ClientCnxn.java:975)]
+Opening socket connection to server 10.12.159.156/10.12.159.156:2181. Will not attempt to authenticate using SASL (unknown error)
+ [INFO ][2019/05/16 11:51:25789][org.apache.zookeeper.ClientCnxn$SendThread.primeConnection(ClientCnxn.java:852)]
+Socket connection established to 10.12.159.156/10.12.159.156:2181, initiating session
+ [INFO ][2019/05/16 11:51:25802][org.apache.zookeeper.ClientCnxn$SendThread.onConnected(ClientCnxn.java:1235)]
+Session establishment complete on server 10.12.159.156/10.12.159.156:2181, sessionid = 0x16ab90832750042, negotiated timeout = 30000
+ [INFO ][2019/05/16 11:51:25803][org.I0Itec.zkclient.ZkClient.processStateChanged(ZkClient.java:711)]
+zookeeper state changed (SyncConnected)
+ [INFO ][2019/05/16 11:51:25804][com.alibaba.dubbo.registry.support.AbstractRegistry.register(AbstractRegistry.java:302)]
+ [DUBBO] Register: dubbo://192.168.56.1:20880/com.czl.service.RoommanageService?anyhost=true&application=HotelService&dubbo=2.5.3&interface=com.czl.service.RoommanageService&methods=selectByExample,updateByExample,selectByPrimaryKey,countByExample,insertSelective,deleteByExample,updateByExampleSelective,updateByPrimaryKeySelective,updateByPrimaryKey,insert,deleteByPrimaryKey&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978675444, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:25821][com.alibaba.dubbo.registry.support.AbstractRegistry.subscribe(AbstractRegistry.java:325)]
+ [DUBBO] Subscribe: provider://192.168.56.1:20880/com.czl.service.RoommanageService?anyhost=true&application=HotelService&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.RoommanageService&methods=selectByExample,updateByExample,selectByPrimaryKey,countByExample,insertSelective,deleteByExample,updateByExampleSelective,updateByPrimaryKeySelective,updateByPrimaryKey,insert,deleteByPrimaryKey&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978675444, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:25852][com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)]
+ [DUBBO] Notify urls for subscribe url provider://192.168.56.1:20880/com.czl.service.RoommanageService?anyhost=true&application=HotelService&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.RoommanageService&methods=selectByExample,updateByExample,selectByPrimaryKey,countByExample,insertSelective,deleteByExample,updateByExampleSelective,updateByPrimaryKeySelective,updateByPrimaryKey,insert,deleteByPrimaryKey&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978675444, urls: [empty://192.168.56.1:20880/com.czl.service.RoommanageService?anyhost=true&application=HotelService&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.RoommanageService&methods=selectByExample,updateByExample,selectByPrimaryKey,countByExample,insertSelective,deleteByExample,updateByExampleSelective,updateByPrimaryKeySelective,updateByPrimaryKey,insert,deleteByPrimaryKey&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978675444], dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:25875][com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:107)]
+ [DUBBO] The service ready on spring started. service: com.czl.service.RoomAndTypeService, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:25882][com.alibaba.dubbo.config.ServiceConfig.exportLocal(ServiceConfig.java:510)]
+ [DUBBO] Export dubbo service com.czl.service.RoomAndTypeService to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:25883][com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:470)]
+ [DUBBO] Export dubbo service com.czl.service.RoomAndTypeService to url dubbo://192.168.56.1:20880/com.czl.service.RoomAndTypeService?anyhost=true&application=HotelService&dubbo=2.5.3&interface=com.czl.service.RoomAndTypeService&methods=selectAllRoomAndType&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978685878, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:25883][com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:481)]
+ [DUBBO] Register dubbo service com.czl.service.RoomAndTypeService url dubbo://192.168.56.1:20880/com.czl.service.RoomAndTypeService?anyhost=true&application=HotelService&dubbo=2.5.3&interface=com.czl.service.RoomAndTypeService&methods=selectAllRoomAndType&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978685878 to registry registry://10.12.159.156:2181/com.alibaba.dubbo.registry.RegistryService?application=HotelService&dubbo=2.5.3&pid=1724&registry=zookeeper&timestamp=1557978685877, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:25883][com.alibaba.dubbo.registry.support.AbstractRegistry.register(AbstractRegistry.java:302)]
+ [DUBBO] Register: dubbo://192.168.56.1:20880/com.czl.service.RoomAndTypeService?anyhost=true&application=HotelService&dubbo=2.5.3&interface=com.czl.service.RoomAndTypeService&methods=selectAllRoomAndType&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978685878, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:25897][com.alibaba.dubbo.registry.support.AbstractRegistry.subscribe(AbstractRegistry.java:325)]
+ [DUBBO] Subscribe: provider://192.168.56.1:20880/com.czl.service.RoomAndTypeService?anyhost=true&application=HotelService&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.RoomAndTypeService&methods=selectAllRoomAndType&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978685878, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:25911][com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)]
+ [DUBBO] Notify urls for subscribe url provider://192.168.56.1:20880/com.czl.service.RoomAndTypeService?anyhost=true&application=HotelService&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.RoomAndTypeService&methods=selectAllRoomAndType&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978685878, urls: [empty://192.168.56.1:20880/com.czl.service.RoomAndTypeService?anyhost=true&application=HotelService&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.RoomAndTypeService&methods=selectAllRoomAndType&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978685878], dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:25912][com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:107)]
+ [DUBBO] The service ready on spring started. service: com.czl.service.UserInfoService, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:25924][com.alibaba.dubbo.config.ServiceConfig.exportLocal(ServiceConfig.java:510)]
+ [DUBBO] Export dubbo service com.czl.service.UserInfoService to local registry, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:25924][com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:470)]
+ [DUBBO] Export dubbo service com.czl.service.UserInfoService to url dubbo://192.168.56.1:20880/com.czl.service.UserInfoService?anyhost=true&application=HotelService&dubbo=2.5.3&interface=com.czl.service.UserInfoService&methods=selectByExample,selectByPrimaryKey,insertSelective,updateByPrimaryKeySelective,deleteByPrimaryKey,selectByPrimaryName&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978685916, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:25925][com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:481)]
+ [DUBBO] Register dubbo service com.czl.service.UserInfoService url dubbo://192.168.56.1:20880/com.czl.service.UserInfoService?anyhost=true&application=HotelService&dubbo=2.5.3&interface=com.czl.service.UserInfoService&methods=selectByExample,selectByPrimaryKey,insertSelective,updateByPrimaryKeySelective,deleteByPrimaryKey,selectByPrimaryName&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978685916 to registry registry://10.12.159.156:2181/com.alibaba.dubbo.registry.RegistryService?application=HotelService&dubbo=2.5.3&pid=1724&registry=zookeeper&timestamp=1557978685915, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:25925][com.alibaba.dubbo.registry.support.AbstractRegistry.register(AbstractRegistry.java:302)]
+ [DUBBO] Register: dubbo://192.168.56.1:20880/com.czl.service.UserInfoService?anyhost=true&application=HotelService&dubbo=2.5.3&interface=com.czl.service.UserInfoService&methods=selectByExample,selectByPrimaryKey,insertSelective,updateByPrimaryKeySelective,deleteByPrimaryKey,selectByPrimaryName&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978685916, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:25935][com.alibaba.dubbo.registry.support.AbstractRegistry.subscribe(AbstractRegistry.java:325)]
+ [DUBBO] Subscribe: provider://192.168.56.1:20880/com.czl.service.UserInfoService?anyhost=true&application=HotelService&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.UserInfoService&methods=selectByExample,selectByPrimaryKey,insertSelective,updateByPrimaryKeySelective,deleteByPrimaryKey,selectByPrimaryName&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978685916, dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:25944][com.alibaba.dubbo.registry.support.AbstractRegistry.notify(AbstractRegistry.java:422)]
+ [DUBBO] Notify urls for subscribe url provider://192.168.56.1:20880/com.czl.service.UserInfoService?anyhost=true&application=HotelService&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.UserInfoService&methods=selectByExample,selectByPrimaryKey,insertSelective,updateByPrimaryKeySelective,deleteByPrimaryKey,selectByPrimaryName&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978685916, urls: [empty://192.168.56.1:20880/com.czl.service.UserInfoService?anyhost=true&application=HotelService&category=configurators&check=false&dubbo=2.5.3&interface=com.czl.service.UserInfoService&methods=selectByExample,selectByPrimaryKey,insertSelective,updateByPrimaryKeySelective,deleteByPrimaryKey,selectByPrimaryName&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978685916], dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:51:25947][org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:345)]
+Root WebApplicationContext: initialization completed in 11537 ms
+ [INFO ][2019/05/16 11:51:59893][com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:785)]
+{dataSource-1} inited
+ [WARN ][2019/05/16 11:54:21459][com.alibaba.dubbo.remoting.transport.AbstractServer.disconnected(AbstractServer.java:197)]
+ [DUBBO] All clients has discontected from /192.168.56.1:20880. You can graceful shutdown now., dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:54:21459][com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol$1.disconnected(DubboProtocol.java:130)]
+ [DUBBO] disconected from /192.168.56.1:60516,url:dubbo://192.168.56.1:20880/com.czl.service.RoommanageService?anyhost=true&application=HotelService&channel.readonly.sent=true&codec=dubbo&dubbo=2.5.3&heartbeat=60000&interface=com.czl.service.RoommanageService&methods=selectByExample,updateByExample,selectByPrimaryKey,countByExample,insertSelective,deleteByExample,updateByExampleSelective,updateByPrimaryKeySelective,updateByPrimaryKey,insert,deleteByPrimaryKey&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978675444, dubbo version: 2.5.3, current host: 127.0.0.1
+ [WARN ][2019/05/16 11:55:17173][com.alibaba.dubbo.remoting.transport.AbstractServer.disconnected(AbstractServer.java:197)]
+ [DUBBO] All clients has discontected from /192.168.56.1:20880. You can graceful shutdown now., dubbo version: 2.5.3, current host: 127.0.0.1
+ [INFO ][2019/05/16 11:55:17174][com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol$1.disconnected(DubboProtocol.java:130)]
+ [DUBBO] disconected from /192.168.56.1:60566,url:dubbo://192.168.56.1:20880/com.czl.service.RoommanageService?anyhost=true&application=HotelService&channel.readonly.sent=true&codec=dubbo&dubbo=2.5.3&heartbeat=60000&interface=com.czl.service.RoommanageService&methods=selectByExample,updateByExample,selectByPrimaryKey,countByExample,insertSelective,deleteByExample,updateByExampleSelective,updateByPrimaryKeySelective,updateByPrimaryKey,insert,deleteByPrimaryKey&pid=1724&revision=0.0.1-SNAPSHOT&side=provider&timestamp=1557978675444, dubbo version: 2.5.3, current host: 127.0.0.1
  

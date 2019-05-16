@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.czl.mapper.MemberlevelMapper" >
+  <resultMap id="BaseResultMap" type="com.czl.pojo.Memberlevel" >
+    <id column="levelID" property="levelid" jdbcType="INTEGER" />
+    <result column="levelname" property="levelname" jdbcType="VARCHAR" />
+    <result column="leveldiscount" property="leveldiscount" jdbcType="DOUBLE" />
+    <result column="levelpoints" property="levelpoints" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    levelID, levelname, leveldiscount, levelpoints
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.czl.pojo.MemberlevelExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from memberlevel
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from memberlevel
+    where levelID = #{levelid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from memberlevel
+    where levelID = #{levelid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.czl.pojo.MemberlevelExample" >
+    delete from memberlevel
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.czl.pojo.Memberlevel" >
+    insert into memberlevel (levelID, levelname, leveldiscount, 
+      levelpoints)
+    values (#{levelid,jdbcType=INTEGER}, #{levelname,jdbcType=VARCHAR}, #{leveldiscount,jdbcType=DOUBLE}, 
+      #{levelpoints,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.czl.pojo.Memberlevel" >
+    insert into memberlevel
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="levelid != null" >
+        levelID,
+      </if>
+      <if test="levelname != null" >
+        levelname,
+      </if>
+      <if test="leveldiscount != null" >
+        leveldiscount,
+      </if>
+      <if test="levelpoints != null" >
+        levelpoints,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="levelid != null" >
+        #{levelid,jdbcType=INTEGER},
+      </if>
+      <if test="levelname != null" >
+        #{levelname,jdbcType=VARCHAR},
+      </if>
+      <if test="leveldiscount != null" >
+        #{leveldiscount,jdbcType=DOUBLE},
+      </if>
+      <if test="levelpoints != null" >
+        #{levelpoints,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.czl.pojo.MemberlevelExample" resultType="java.lang.Integer" >
+    select count(*) from memberlevel
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update memberlevel
+    <set >
+      <if test="record.levelid != null" >
+        levelID = #{record.levelid,jdbcType=INTEGER},
+      </if>
+      <if test="record.levelname != null" >
+        levelname = #{record.levelname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.leveldiscount != null" >
+        leveldiscount = #{record.leveldiscount,jdbcType=DOUBLE},
+      </if>
+      <if test="record.levelpoints != null" >
+        levelpoints = #{record.levelpoints,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update memberlevel
+    set levelID = #{record.levelid,jdbcType=INTEGER},
+      levelname = #{record.levelname,jdbcType=VARCHAR},
+      leveldiscount = #{record.leveldiscount,jdbcType=DOUBLE},
+      levelpoints = #{record.levelpoints,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.czl.pojo.Memberlevel" >
+    update memberlevel
+    <set >
+      <if test="levelname != null" >
+        levelname = #{levelname,jdbcType=VARCHAR},
+      </if>
+      <if test="leveldiscount != null" >
+        leveldiscount = #{leveldiscount,jdbcType=DOUBLE},
+      </if>
+      <if test="levelpoints != null" >
+        levelpoints = #{levelpoints,jdbcType=INTEGER},
+      </if>
+    </set>
+    where levelID = #{levelid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.czl.pojo.Memberlevel" >
+    update memberlevel
+    set levelname = #{levelname,jdbcType=VARCHAR},
+      leveldiscount = #{leveldiscount,jdbcType=DOUBLE},
+      levelpoints = #{levelpoints,jdbcType=INTEGER}
+    where levelID = #{levelid,jdbcType=INTEGER}
+  </update>
+</mapper>
