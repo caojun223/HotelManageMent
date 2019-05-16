@@ -1,9 +1,10 @@
 package com.czl.pojo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RoommanageExample {
+public class RoommanageExample implements Serializable {
     protected String orderByClause;
 
     protected boolean distinct;
@@ -564,73 +565,73 @@ public class RoommanageExample {
             return (Criteria) this;
         }
 
-        public Criteria andRoomtypeIsNull() {
-            addCriterion("RoomType is null");
+        public Criteria andTypeidIsNull() {
+            addCriterion("TypeId is null");
             return (Criteria) this;
         }
 
-        public Criteria andRoomtypeIsNotNull() {
-            addCriterion("RoomType is not null");
+        public Criteria andTypeidIsNotNull() {
+            addCriterion("TypeId is not null");
             return (Criteria) this;
         }
 
-        public Criteria andRoomtypeEqualTo(String value) {
-            addCriterion("RoomType =", value, "roomtype");
+        public Criteria andTypeidEqualTo(String value) {
+            addCriterion("TypeId =", value, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andRoomtypeNotEqualTo(String value) {
-            addCriterion("RoomType <>", value, "roomtype");
+        public Criteria andTypeidNotEqualTo(String value) {
+            addCriterion("TypeId <>", value, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andRoomtypeGreaterThan(String value) {
-            addCriterion("RoomType >", value, "roomtype");
+        public Criteria andTypeidGreaterThan(String value) {
+            addCriterion("TypeId >", value, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andRoomtypeGreaterThanOrEqualTo(String value) {
-            addCriterion("RoomType >=", value, "roomtype");
+        public Criteria andTypeidGreaterThanOrEqualTo(String value) {
+            addCriterion("TypeId >=", value, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andRoomtypeLessThan(String value) {
-            addCriterion("RoomType <", value, "roomtype");
+        public Criteria andTypeidLessThan(String value) {
+            addCriterion("TypeId <", value, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andRoomtypeLessThanOrEqualTo(String value) {
-            addCriterion("RoomType <=", value, "roomtype");
+        public Criteria andTypeidLessThanOrEqualTo(String value) {
+            addCriterion("TypeId <=", value, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andRoomtypeLike(String value) {
-            addCriterion("RoomType like", value, "roomtype");
+        public Criteria andTypeidLike(String value) {
+            addCriterion("TypeId like", value, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andRoomtypeNotLike(String value) {
-            addCriterion("RoomType not like", value, "roomtype");
+        public Criteria andTypeidNotLike(String value) {
+            addCriterion("TypeId not like", value, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andRoomtypeIn(List<String> values) {
-            addCriterion("RoomType in", values, "roomtype");
+        public Criteria andTypeidIn(List<String> values) {
+            addCriterion("TypeId in", values, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andRoomtypeNotIn(List<String> values) {
-            addCriterion("RoomType not in", values, "roomtype");
+        public Criteria andTypeidNotIn(List<String> values) {
+            addCriterion("TypeId not in", values, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andRoomtypeBetween(String value1, String value2) {
-            addCriterion("RoomType between", value1, value2, "roomtype");
+        public Criteria andTypeidBetween(String value1, String value2) {
+            addCriterion("TypeId between", value1, value2, "typeid");
             return (Criteria) this;
         }
 
-        public Criteria andRoomtypeNotBetween(String value1, String value2) {
-            addCriterion("RoomType not between", value1, value2, "roomtype");
+        public Criteria andTypeidNotBetween(String value1, String value2) {
+            addCriterion("TypeId not between", value1, value2, "typeid");
             return (Criteria) this;
         }
     }

@@ -24,8 +24,9 @@
               <a><cite>房间列表</cite></a>
             </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
-       href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon"
-                                                                        style="line-height:30px">ဂ</i></a>
+       href="javascript:location.replace(location.href);" title="刷新">
+        <i class="layui-icon" style="line-height:30px">ဂ</i>
+    </a>
 </div>
 <table class="layui-hide" id="test" lay-filter="test">
 </table>
@@ -70,9 +71,6 @@
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">房间状态：</label>
-                <!--<div class="layui-input-inline">
-                    <input type="text" name="roleName" class="layui-input">
-                </div>-->
                 <div class="layui-input-inline">
                     <select name="state" lay-verify="" id="roomstate">
                         <option value="">要修改成什么状态</option>
@@ -103,7 +101,7 @@
         //数据渲染
         table.render({
             elem: '#test'
-            , url: '/selectByExample'
+            , url: '/selectAllRoomAndType'
             , height: 'full-200'
             , page: true
             , limits: [5, 10, 20]
@@ -111,10 +109,10 @@
             , toolbar: 'default'
             , cols: [[
                 {type: 'checkbox'}
-                , {field: 'roomnum', title: '房间号', align: 'center', sort: true}
-                , {field: 'roomfloor', title: '房间楼层', align: 'center', sort: true}
+                , {field: 'roomNum', title: '房间号', align: 'center', sort: true}
+                , {field: 'roomFloor', title: '房间楼层', align: 'center', sort: true}
                 , {
-                    field: 'roomimg',
+                    field: 'roomImg',
                     title: '房间图片',
                     width: 150,
                     style: "height:100px;",
@@ -123,19 +121,12 @@
                         return '<div><img src=' + data.roomimg + '></div>'
                     }
                 }
-                , {field: 'roomdesc', title: '房间描述', align: 'center', edit: 'text'}
-                , {field: 'roomprice', title: '价格', align: 'center', minWidth: 100}
-                , {field: 'roomstate', title: '状态', align: 'center', sort: true, edit: 'text'}
-                , {field: 'roomtype', title: '类型', align: 'center', sort: true}
+                , {field: 'roomDesc', title: '房间描述', align: 'center', edit: 'text'}
+                , {field: 'roomPrice', title: '价格', align: 'center', minWidth: 100}
+                , {field: 'roomState', title: '状态', align: 'center', sort: true, edit: 'text'}
+                , {field: 'typeName', title: '类型', align: 'center', sort: true}
                 , {fixed: 'right', title: '操作', align: 'center', toolbar: '#barDemo'}
             ]]
-        });
-
-        layer.ready(function () { //为了layer.ext.js加载完毕再执行
-            layer.photos({
-                photos: '#test'
-                //,shift: 5 //0-6的选择，指定弹出图片动画类型，默认随机
-            });
         });
 
         //监听行工具事件
@@ -154,7 +145,7 @@
                         yes: function (index, layero) {
                             var changeRoomdesc = $("#roomdesc").val();
                             var roomState = $("#roomstate").val();
-                            var roomId = data.roomid;
+                            var roomId = data.roomId;
                             $.ajax({
                                 type: "post",
                                 contentType: "application/json;charset=UTF-8",
@@ -168,7 +159,7 @@
                                 success: function (data) {
                                     console.log(data);
                                     if (data == 1) {
-                                        window.location.href="./room-list.html";
+                                        window.location.href = "./room-list.html";
                                     }
                                 }
                             })
@@ -178,16 +169,16 @@
                 $(function () {
                     //从父层获取值，json是父层的全局js变量。eval是将该string类型的json串变为标准的json串
                     var parent_json = eval('(' + json + ')');
-                    var roomNum = parent_json.roomnum;
-                    var roomFloor = parent_json.roomfloor;
-                    var roomDesc = parent_json.roomdesc;
-                    var roomType = parent_json.roomtype;
-                    var roomPrice = parent_json.roomprice;
-                    $("#roomnum").val(roomNum);
-                    $("#roomfloor").val(roomFloor);
-                    $("#roomdesc").val(roomDesc);
-                    $("#roomtype").val(roomType);
-                    $("#roomprice").val(roomPrice);
+                    var roomnum = parent_json.roomNum;
+                    var roomfloor = parent_json.roomFloor;
+                    var roomdesc = parent_json.roomDesc;
+                    var typename = parent_json.typeName;
+                    var roomprice = parent_json.roomPrice;
+                    $("#roomnum").val(roomnum);
+                    $("#roomfloor").val(roomfloor);
+                    $("#roomdesc").val(roomdesc);
+                    $("#roomtype").val(typename);
+                    $("#roomprice").val(roomprice);
                 });
             }
         });

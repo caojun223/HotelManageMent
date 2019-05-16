@@ -17,7 +17,7 @@ public class Roommanage implements Serializable {
 
     private String roomstate;
 
-    private String roomtype;
+    private String typeid;
 
     private static final long serialVersionUID = 1L;
 
@@ -77,11 +77,25 @@ public class Roommanage implements Serializable {
         this.roomstate = roomstate == null ? null : roomstate.trim();
     }
 
-    public String getRoomtype() {
-        return roomtype;
+    public String getTypeid() {
+        return typeid;
     }
 
-    public void setRoomtype(String roomtype) {
-        this.roomtype = roomtype == null ? null : roomtype.trim();
+    public void setTypeid(String typeid) {
+        this.typeid = typeid == null ? null : typeid.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "Roommanage{" +
+                "roomid=" + roomid +
+                ", roomnum='" + roomnum + '\'' +
+                ", roomfloor=" + roomfloor +
+                ", roomimg='" + roomimg + '\'' +
+                ", roomdesc='" + roomdesc + '\'' +
+                ", roomprice=" + roomprice +
+                ", roomstate='" + roomstate + '\'' +
+                ", typeid='" + typeid + '\'' +
+                '}';
     }
 }

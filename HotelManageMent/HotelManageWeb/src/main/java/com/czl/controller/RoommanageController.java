@@ -1,10 +1,11 @@
 package com.czl.controller;
 
+import com.czl.dto.RoomAndType;
+import com.czl.mapper.RoomAndTypeMapper;
 import com.czl.pojo.Roommanage;
-import com.czl.pojo.RoommanageExample;
+import com.czl.service.RoomAndTypeService;
 import com.czl.service.RoommanageService;
 import com.czl.util.LayuiUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,34 +18,33 @@ public class RoommanageController {
     @Resource
     private RoommanageService roommanageService;
 
-    @RequestMapping("/selectByExample")
-    @ResponseBody
-    public LayuiUtil<Roommanage> selectByExample() {
-        System.out.println(123);
-        LayuiUtil<Roommanage> util = new LayuiUtil<>();
-        RoommanageExample example = new RoommanageExample();
-        List<Roommanage> list = roommanageService.selectByExample(example);
+    @Resource
+    private RoomAndTypeService roomAndTypeService;
 
+    @RequestMapping("/selectAllRoomAndType")
+    @ResponseBody
+    public LayuiUtil<RoomAndType> selectAllRoomAndType() {
+        System.out.println(123);
+        LayuiUtil<RoomAndType> util = new LayuiUtil<>();
+        List<RoomAndType> list = roomAndTypeService.selectAllRoomAndType();
         util.setCode(0);
         util.setMsg("");
         util.setCount(list.size());
         util.setData(list);
-
         return util;
     }
 
     @RequestMapping("/updateRoomManage")
     @ResponseBody
-    public int updateByPrimaryKeySelective(@RequestBody Roommanage message) {
+    public int updateByExampleSelective(@RequestBody Roommanage message) {
         String roomstate = message.getRoomstate();
         String roomdesc = message.getRoomdesc();
         Integer roomid = message.getRoomid();
-        Roommanage roommanage = roommanageService.selectByPrimaryKey(roomid);
-        System.out.println(roommanage);
-        roommanage.setRoomstate(roomstate);
-        roommanage.setRoomdesc(roomdesc);
-        roommanage.setRoomid(roomid);
-        System.out.println(roommanage);
+        System.out.println(roomstate + "===" + roomdesc + "===" + roomid);
+        message.setRoomstate(roomstate);
+        message.setRoomdesc(roomdesc);
+        message.setRoomid(roomid);
+        System.out.println(message);
         return roommanageService.updateByPrimaryKeySelective(message);
     }
 }

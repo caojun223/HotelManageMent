@@ -9,7 +9,7 @@
     <result column="RoomDesc" property="roomdesc" jdbcType="VARCHAR" />
     <result column="RoomPrice" property="roomprice" jdbcType="DOUBLE" />
     <result column="RoomState" property="roomstate" jdbcType="VARCHAR" />
-    <result column="RoomType" property="roomtype" jdbcType="VARCHAR" />
+    <result column="TypeId" property="typeid" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -70,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    RoomID, RoomNum, RoomFloor, RoomImg, RoomDesc, RoomPrice, RoomState, RoomType
+    RoomID, RoomNum, RoomFloor, RoomImg, RoomDesc, RoomPrice, RoomState, TypeId
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.czl.pojo.RoommanageExample" >
     select
@@ -105,10 +105,10 @@
   <insert id="insert" parameterType="com.czl.pojo.Roommanage" >
     insert into roommanage (RoomID, RoomNum, RoomFloor, 
       RoomImg, RoomDesc, RoomPrice, 
-      RoomState, RoomType)
+      RoomState, TypeId)
     values (#{roomid,jdbcType=INTEGER}, #{roomnum,jdbcType=VARCHAR}, #{roomfloor,jdbcType=INTEGER}, 
       #{roomimg,jdbcType=VARCHAR}, #{roomdesc,jdbcType=VARCHAR}, #{roomprice,jdbcType=DOUBLE}, 
-      #{roomstate,jdbcType=VARCHAR}, #{roomtype,jdbcType=VARCHAR})
+      #{roomstate,jdbcType=VARCHAR}, #{typeid,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.czl.pojo.Roommanage" >
     insert into roommanage
@@ -134,8 +134,8 @@
       <if test="roomstate != null" >
         RoomState,
       </if>
-      <if test="roomtype != null" >
-        RoomType,
+      <if test="typeid != null" >
+        TypeId,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -160,8 +160,8 @@
       <if test="roomstate != null" >
         #{roomstate,jdbcType=VARCHAR},
       </if>
-      <if test="roomtype != null" >
-        #{roomtype,jdbcType=VARCHAR},
+      <if test="typeid != null" >
+        #{typeid,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -195,8 +195,8 @@
       <if test="record.roomstate != null" >
         RoomState = #{record.roomstate,jdbcType=VARCHAR},
       </if>
-      <if test="record.roomtype != null" >
-        RoomType = #{record.roomtype,jdbcType=VARCHAR},
+      <if test="record.typeid != null" >
+        TypeId = #{record.typeid,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -212,7 +212,7 @@
       RoomDesc = #{record.roomdesc,jdbcType=VARCHAR},
       RoomPrice = #{record.roomprice,jdbcType=DOUBLE},
       RoomState = #{record.roomstate,jdbcType=VARCHAR},
-      RoomType = #{record.roomtype,jdbcType=VARCHAR}
+      TypeId = #{record.typeid,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -238,8 +238,8 @@
       <if test="roomstate != null" >
         RoomState = #{roomstate,jdbcType=VARCHAR},
       </if>
-      <if test="roomtype != null" >
-        RoomType = #{roomtype,jdbcType=VARCHAR},
+      <if test="typeid != null" >
+        TypeId = #{typeid,jdbcType=VARCHAR},
       </if>
     </set>
     where RoomID = #{roomid,jdbcType=INTEGER}
@@ -252,7 +252,7 @@
       RoomDesc = #{roomdesc,jdbcType=VARCHAR},
       RoomPrice = #{roomprice,jdbcType=DOUBLE},
       RoomState = #{roomstate,jdbcType=VARCHAR},
-      RoomType = #{roomtype,jdbcType=VARCHAR}
+      TypeId = #{typeid,jdbcType=VARCHAR}
     where RoomID = #{roomid,jdbcType=INTEGER}
   </update>
 </mapper>

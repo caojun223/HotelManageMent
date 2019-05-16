@@ -1,8 +1,9 @@
 package com.czl.util;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class LayuiUtil<T> {
+public class LayuiUtil<T> implements Serializable {
 
     private int code;
 
