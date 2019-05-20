@@ -52,6 +52,12 @@
                 </div>
             </div>
             <div class="layui-form-item">
+                <label class="layui-form-label">房间图片：</label>
+                <div class="layui-input-inline">
+                    <input type="file" name="roomfloor" class="layui-input" id="roomimg" accept="image/png">
+                </div>
+            </div>
+            <div class="layui-form-item">
                 <label class="layui-form-label">房间描述：</label>
                 <div class="layui-input-inline">
                     <input type="text" name="roomdesc" class="layui-input" id="roomdesc">
@@ -77,6 +83,7 @@
                         <option value="取消预定">取消预定</option>
                         <option value="办理入住">办理入住</option>
                         <option value="已预定">已预定</option>
+                        <option value="空闲">空闲</option>
                     </select>
                 </div>
             </div>
@@ -118,7 +125,7 @@
                     style: "height:100px;",
                     align: 'center',
                     templet: function (data) {
-                        return '<div><img src=' + data.roomimg + '></div>'
+                        return '<div><img src=' + data.roomImg + '></div>'
                     }
                 }
                 , {field: 'roomDesc', title: '房间描述', align: 'center', edit: 'text'}
@@ -146,6 +153,8 @@
                             var changeRoomdesc = $("#roomdesc").val();
                             var roomState = $("#roomstate").val();
                             var roomId = data.roomId;
+                            var roomImg=$("#roomsimg").val();
+                            alert(roomImg);
                             $.ajax({
                                 type: "post",
                                 contentType: "application/json;charset=UTF-8",
@@ -171,11 +180,14 @@
                     var parent_json = eval('(' + json + ')');
                     var roomnum = parent_json.roomNum;
                     var roomfloor = parent_json.roomFloor;
+                    var roomimg = parent_json.roomImg;
                     var roomdesc = parent_json.roomDesc;
                     var typename = parent_json.typeName;
                     var roomprice = parent_json.roomPrice;
+                    console.log(roomimg);
                     $("#roomnum").val(roomnum);
                     $("#roomfloor").val(roomfloor);
+                    /*$("#roomimg").val(roomimg);*/
                     $("#roomdesc").val(roomdesc);
                     $("#roomtype").val(typename);
                     $("#roomprice").val(roomprice);

@@ -114,4 +114,21 @@ public class Userinfo implements Serializable {
     public void setUseremail(String useremail) {
         this.useremail = useremail == null ? null : useremail.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Userinfo{" +
+                "userid=" + userid +
+                ", username='" + username + '\'' +
+                ", userpass='" + userpass + '\'' +
+                ", usersex='" + usersex + '\'' +
+                ", usertel='" + usertel + '\'' +
+                ", usercarttype='" + usercarttype + '\'' +
+                ", usercart='" + usercart + '\'' +
+                ", userstate='" + userstate + '\'' +
+                ", userpoints=" + userpoints +
+                ", levelid=" + levelid +
+                ", useremail='" + useremail + '\'' +
+                '}';
+    }
 }

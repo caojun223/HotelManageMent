@@ -2,7 +2,9 @@ package com.czl.mapper;
 
 import com.czl.pojo.Bookinfo;
 import com.czl.pojo.BookinfoExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface BookinfoMapper {
@@ -27,4 +29,6 @@ public interface BookinfoMapper {
     int updateByPrimaryKeySelective(Bookinfo record);
 
     int updateByPrimaryKey(Bookinfo record);
+
+    List<Bookinfo> selectByRoomType();
 }

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="bootstrap/dist/js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+    body {
+        padding: 20px;
+    }
+
+    .headLeft {
+        float: left;
+    }
+
+    .headRight {
+        padding-top: 40px;
+        padding-left: 340px;
+    }
+
+    .search {
+        margin-bottom: 10px;
+    }
+
+    .search .toolbar {
+    }
+</style>
+<!--必须使用较新版本的BootStrap才有如下效果-->
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand " href="#">个人信息</a>
+                    </div>
+                    <div id="navbar" class="navbar-right">
+                        <a class="navbar-brand" href="#">当前用户：<span id="userinfo"></span></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="row" style="padding-top: 45px">
+        <div class="col-md-3">
+            <div class="list-group">
+                <!--激活，作为标题-->
+                <a href="#" class="list-group-item active ">
+                    系统菜单
+                </a>
+                <a href="#" class="list-group-item">管理一</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div>
+                <ol class="breadcrumb">
+                    <li><span class="glyphicon glyphicon-home"></span>&nbsp;
+                        <a href="#">主页</a>
+                    </li>
+                    <li class="active"></li>
+                </ol>
+            </div>
+            <div align="center" style="padding-top: 50px;">
+                <form>
+                    <fieldset>
+                        <legend>修改密码</legend>
+                        <input type="text" id="userinfo-name" readonly="readonly"><br>
+                        <input type="text" id="userinfo-pass"/><br>
+                        <button class="btn" type="submit" onclick="update()">提交</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div align="center" style="padding-top: 200px">
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var userName = sessionStorage.getItem("userName");
+    console.log(userName);
+    if (userName != null) {
+        $("#userinfo").html(userName);
+    }
+    $("#userinfo-name").val(userName);
+
+    function update() {
+        var userinfo = new Object();
+        var userpass = $("#userinfo-pass").val();
+        userinfo.username = userName;
+        userinfo.userpass = userpass;
+        $.ajax({
+            type: 'post',
+            /*dataType: 'json',*/
+            contentType: "application/json;charset=utf-8",
+            url: '/updateByPrimaryKeySelective',
+            async: true,
+            data: JSON.stringify(userinfo),
+            success: function (data) {
+                console.log(data);
+                if (data == 1) {
+                    window.location.reload();
+                }
+            }
+        })
+    }
+
+</script>
+</body>
+</html>

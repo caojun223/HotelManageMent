@@ -1,7 +1,6 @@
 package com.czl.controller;
 
 import com.czl.dto.RoomAndType;
-import com.czl.mapper.RoomAndTypeMapper;
 import com.czl.pojo.Roommanage;
 import com.czl.service.RoomAndTypeService;
 import com.czl.service.RoommanageService;
@@ -41,6 +40,8 @@ public class RoommanageController {
         String roomdesc = message.getRoomdesc();
         Integer roomid = message.getRoomid();
         System.out.println(roomstate + "===" + roomdesc + "===" + roomid);
+        if (roomstate.equals("取消预定"))
+            roomstate = "空闲";
         message.setRoomstate(roomstate);
         message.setRoomdesc(roomdesc);
         message.setRoomid(roomid);

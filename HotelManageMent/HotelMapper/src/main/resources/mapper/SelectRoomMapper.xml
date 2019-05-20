@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.czl.mapper.SelectRoomMapper">
+    <select id="selectAllRoomByState" resultType="com.czl.dto.SelectRoom">
+        SELECT rm.roomid, rm.roomnum,rm.roomfloor,rm.roomdesc,rm.roomimg,rm.chickin,rm.chickout,rm.roomstate
+        FROM roomtype rt,roommanage rm WHERE rt.typeid=rm.typeid AND rm.roomstate='空闲'
+        AND rm.chickin &gt;= #{chickin} AND rm.chickout &lt; #{chickout}
+    </select>
+</mapper>

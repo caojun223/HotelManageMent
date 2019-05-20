@@ -11,12 +11,17 @@
 
     <dubbo:application name="HotelService"/>
 
+	<dubbo:protocol name="dubbo" port="20880" />
+
     <!--<dubbo:registry address="zookeeper://10.12.159.133:2181"/>-->
     <dubbo:registry address="zookeeper://10.12.159.156:2181"/>
     <!--<dubbo:registry address="zookeeper://192.168.8.100:2181"/>-->
 
-    <dubbo:protocol name="dubbo" port="20880"/>
-
     <dubbo:service interface="com.czl.service.RoommanageService" ref="roommanageImpl"/>
     <dubbo:service interface="com.czl.service.RoomAndTypeService" ref="roomAndTypeImpl"/>
+    <dubbo:service interface="com.czl.service.UserInfoService" ref="userInfoServiceImpl" />
+    <dubbo:service interface="com.czl.service.BookInfoService" ref="bookInfoServiceImpl" />
+    <dubbo:service interface="com.czl.service.RoomtypeService" ref="roomtypeServiceImpl" />
+    <dubbo:service interface="com.czl.service.SelectRoomService" ref="selectRoomServiceImpl" />
+
 </beans>
