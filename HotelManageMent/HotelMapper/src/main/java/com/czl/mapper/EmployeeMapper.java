@@ -27,6 +27,4 @@ public interface EmployeeMapper {
     int updateByPrimaryKeySelective(Employee record);
 
     int updateByPrimaryKey(Employee record);
-
-    public Employee getEmployeeByName(String employeename);
 }

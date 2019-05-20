@@ -84,18 +84,4 @@ public class Employee implements Serializable {
     public void setEmployeestate(String employeestate) {
         this.employeestate = employeestate == null ? null : employeestate.trim();
     }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "employeeid=" + employeeid +
-                ", employeename='" + employeename + '\'' +
-                ", employeepass='" + employeepass + '\'' +
-                ", employeesex='" + employeesex + '\'' +
-                ", employeetel='" + employeetel + '\'' +
-                ", employeecarttype='" + employeecarttype + '\'' +
-                ", employeecart='" + employeecart + '\'' +
-                ", employeestate='" + employeestate + '\'' +
-                '}';
-    }
 }

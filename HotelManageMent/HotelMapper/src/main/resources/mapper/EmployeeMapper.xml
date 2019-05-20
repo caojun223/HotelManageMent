@@ -256,14 +256,4 @@
       EmployeeState = #{employeestate,jdbcType=VARCHAR}
     where EmployeeId = #{employeeid,jdbcType=INTEGER}
   </update>
-
-  <select id="getEmployeeByName" parameterType="String" resultType="com.czl.pojo.Employee">
-    select
-        EmployeeId, EmployeeName, EmployeePass, EmployeeSex, EmployeeTel, EmployeeCartType,
-        EmployeeCart, EmployeeState
-    from
-        employee
-    where
-        EmployeeName=#{employeename}
-  </select>
 </mapper>

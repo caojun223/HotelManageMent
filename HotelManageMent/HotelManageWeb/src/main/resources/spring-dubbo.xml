@@ -15,16 +15,11 @@
     <dubbo:registry address="zookeeper://10.12.159.156:2181"/>
     <!--<dubbo:registry address="zookeeper://192.168.8.100:2181"/>-->
 
-<<<<<<< HEAD
     <dubbo:reference interface="com.czl.service.UserInfoService" id="userInfoServiceImpl"></dubbo:reference>
     <dubbo:reference interface="com.czl.service.RoomtypeService" id="roomtypeService"></dubbo:reference>
     <dubbo:reference interface="com.czl.service.BookInfoService" id="bookInfoService"></dubbo:reference>
     <dubbo:reference interface="com.czl.service.RoommanageService" id="roommanageService"></dubbo:reference>
     <dubbo:reference interface="com.czl.service.RoomAndTypeService" id="roomAndTypeService"></dubbo:reference>
     <dubbo:reference interface="com.czl.service.SelectRoomService" id="selectRoomService"></dubbo:reference>
-=======
-<dubbo:reference interface="com.czl.service.EmployeeService" id="eserviceimp"></dubbo:reference>
-<dubbo:reference interface="com.czl.service.UserMenuService" id="userMenuService"></dubbo:reference>
->>>>>>> origin/caiyang_first_001
 
 </beans>

@@ -1,176 +1,110 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="author" content="order by dede58.com"/>
-    <title>
-        泽龙酒店管理
-    </title>
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="./css/x-admin.css" media="all">
-
-    <script src="./lib/layui/layui.js" charset="utf-8"></script>
-    <script src="./js/x-admin.js"></script>
-    <script src="js/jquery-1.8.3.js"></script>
-</head>
-
-<body>
-<div class="x-body">
-    <form action="" method="post" class="layui-form layui-form-pane">
-        <div class="layui-form-item">
-            <label for="name" class="layui-form-label">
-                <span class="x-red">*</span>角色名
-            </label>
-            <div class="layui-input-inline">
-                <input type="text" id="name" name="name" required="" lay-verify="required" value=""
-                       autocomplete="off" class="layui-input">
-            </div>
+    
+    <head>
+        <meta charset="utf-8">
+<meta name="author" content="order by dede58.com"/>
+        <title>
+            泽龙酒店管理
+        </title>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="./css/x-admin.css" media="all">
+    </head>
+    
+    <body>
+        <div class="x-body">
+            <form action="" method="post" class="layui-form layui-form-pane">
+                <div class="layui-form-item">
+                    <label for="name" class="layui-form-label">
+                        <span class="x-red">*</span>角色名
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="name" name="name" required="" lay-verify="required" value="超级管理员" 
+                        autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">
+                        拥有权限
+                    </label>
+                    <table  class="layui-table layui-input-block">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    用户管理
+                                </td>
+                                <td>
+                                    <div class="layui-input-block">
+                                        <input name="id[]" checked="" type="checkbox" value="2"> 用户停用
+                                        <input name="id[]" type="checkbox" value="2"> 用户删除
+                                        <input name="id[]" checked="" type="checkbox" value="2"> 用户修改
+                                        <input name="id[]" type="checkbox" value="2"> 用户改密
+                                        <input name="id[]" checked="" type="checkbox" value="2"> 用户列表
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    文章管理
+                                </td>
+                                <td>
+                                    <div class="layui-input-block">
+                                        <input name="id[]" type="checkbox" value="2"> 文章添加
+                                        <input name="id[]" checked="" type="checkbox" value="2"> 文章删除
+                                        <input name="id[]" type="checkbox" value="2"> 文章修改
+                                        <input name="id[]" checked="" type="checkbox" value="2"> 文章改密
+                                        <input name="id[]" type="checkbox" value="2"> 文章列表
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label for="desc" class="layui-form-label">
+                        描述
+                    </label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入内容" id="desc" name="desc" class="layui-textarea">具有至高无上的权利</textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                <button class="layui-btn" lay-submit="" lay-filter="save">保存</button>
+              </div>
+            </form>
         </div>
-        <div class="layui-form-item layui-form-text">
-            <label class="layui-form-label">
-                拥有权限
-            </label>
-            <table class="layui-table layui-input-block">
-                <tbody>
-                <tr>
-                    <td>
-                        角色管理
-                    </td>
-                    <td>
-                        <div class="layui-input-block" id="menulist">
-                          <!--  <input name="id[]" type="checkbox" value="2"> 会员管理
-                            <input name="id[]" type="checkbox" value="2"> 预约管理<br/>
-                            <input name="id[]" type="checkbox" value="2"> 客房管理
-                            <input name="id[]" type="checkbox" value="2"> 评价管理<br/>
-                            <input name="id[]" type="checkbox" value="2"> 基础信息管理
-                            <input name="id[]" type="checkbox" value="2"> 权限管理<br/>
-                            <input name="id[]" type="checkbox" value="2"> 系统统计-->
-                        </div>
-                    </td>
-                </tr>
-                <!-- <tr>
-                     <td>
-                         文章管理
-                     </td>
-                     <td>
-                         <div class="layui-input-block">
-                             <input name="id[]" type="checkbox" value="2"> 文章添加
-                             <input name="id[]" type="checkbox" value="2"> 文章删除
-                             <input name="id[]" type="checkbox" value="2"> 文章修改
-                             <input name="id[]" type="checkbox" value="2"> 文章改密
-                             <input name="id[]" type="checkbox" value="2"> 文章列表
-                         </div>
-                     </td>
-                 </tr>-->
-                </tbody>
-            </table>
-        </div>
-        <div class="layui-form-item layui-form-text">
-            <label for="desc" class="layui-form-label">
-                描述
-            </label>
-            <div class="layui-input-block">
-                <textarea placeholder="请输入内容" id="desc" name="desc" class="layui-textarea">具有至高无上的权利</textarea>
-            </div>
-        </div>
+        <script src="./lib/layui/layui.js" charset="utf-8">
+        </script>
+        <script src="./js/x-layui.js" charset="utf-8">
+        </script>
+        <script>
+            layui.use(['form','layer'], function(){
+                $ = layui.jquery;
+              var form = layui.form()
+              ,layer = layui.layer;
 
-    </form>
-    <div class="layui-form-item">
-        <button class="layui-btn" onclick="saveMenu()" >保存</button>
-    </div>
-
-</div>
-<script src="./lib/layui/layui.js" charset="utf-8">
-</script>
-<script src="./js/x-layui.js" charset="utf-8">
-</script>
-<script>
-    layui.use(['form', 'layer'], function () {
-        $ = layui.jquery;
-        var form = layui.form()
-            , layer = layui.layer;
-
-        //监听提交
-        form.on('submit(save)', function (data) {
-            console.log(data);
-            //发异步，把数据提交给php
-            layer.alert("增加成功", {icon: 6}, function () {
-                // 获得frame索引
-                var index = parent.layer.getFrameIndex(window.name);
-                //关闭当前frame
-                parent.layer.close(index);
-            });
-            return false;
-        });
-    });
-</script>
-
-<script type="text/javascript">
-    var roleid = window.location.search.split("=")[1];
-    $(function () {
-
-        var rolename = sessionStorage.getItem("rolename");
-        alert(roleid);
-        $("input[name='name']").val(rolename);
-
-        $.ajax({
-            type: 'get',
-            url: "selectAllMenu",
-            datatype: "json",
-            success: function (data) {
-                for(var i = 0;i<data.length;i++){
-                 console.log(data[i].menuname);
-
-                 var str=" <input name=\"menuname\" type=\"checkbox\" value="+data[i].mnid+">"+data[i].menuname+" ";
-                 $("#menulist").append(str);
-
-                }
-            }
-        });
-    })
-    function saveMenu() {
-        var arr = new Array();
-        var items = $("input[name='menuname']");
-        /*var items = document.getElementsByName("menuname");*/
-        alert(items.length);
-        for (i = 0; i < items.length; i++) {
-            if (items[i].checked) {
-                arr.push(items[i].value);
-            }
-        }
-
-        console.log(JSON.stringify(arr));
-
-        /*var roleMenuVo=new Object();
-        roleMenuVo.roleid=roleid;
-        roleMenuVo.arr=arr;*/
-        var roleMenuVo={"roleid":roleid,"arr":JSON.stringify(arr)};
-
-        $.ajax({
-            type: 'post',
-            url: "addRoleMenu",
-            data: {"roleid": roleid,"arr":arr},
-            traditional : true,
-            dataType:"json",
-            success: function (data) {
+              //监听提交
+              form.on('submit(save)', function(data){
                 console.log(data);
-                if (data>0){
-                    alert("分配成功");
-                    window.location.href="admin-role.html";
-                }else {
-                    alert("分配失败");
-                }
-            }
-        });
-
-    }
-</script>
-</body>
+                //发异步，把数据提交给php
+                layer.alert("增加成功", {icon: 6},function () {
+                    // 获得frame索引
+                    var index = parent.layer.getFrameIndex(window.name);
+                    //关闭当前frame
+                    parent.layer.close(index);
+                });
+                return false;
+              });
+              
+              
+            });
+        </script>
+        
+    </body>
 
 </html>

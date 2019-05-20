@@ -12,7 +12,6 @@
     <dubbo:application name="HotelService"/>
 
 	<dubbo:protocol name="dubbo" port="20880" />
-<<<<<<< HEAD
 
     <!--<dubbo:registry address="zookeeper://10.12.159.133:2181"/>-->
     <dubbo:registry address="zookeeper://10.12.159.156:2181"/>
@@ -25,9 +24,4 @@
     <dubbo:service interface="com.czl.service.RoomtypeService" ref="roomtypeServiceImpl" />
     <dubbo:service interface="com.czl.service.SelectRoomService" ref="selectRoomServiceImpl" />
 
-=======
-	
-	<dubbo:service interface="com.czl.service.EmployeeService" ref="employeeServiceImp" />
-	<dubbo:service interface="com.czl.service.UserMenuService" ref="userMenuServiceImp" />
->>>>>>> origin/caiyang_first_001
 </beans>

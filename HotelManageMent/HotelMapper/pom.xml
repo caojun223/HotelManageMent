@@ -44,7 +44,6 @@
   </dependencies>
   <!-- 打包时包含源代码包下的资源文件 -->
   <!-- 解决有xml的文件项目发布不出去 -->
-<<<<<<< HEAD
   <!--<build>-->
   	<!--&lt;!&ndash;<resources>&ndash;&gt;-->
   		<!--&lt;!&ndash;<resource>&ndash;&gt;-->
@@ -56,17 +55,4 @@
   		<!--&lt;!&ndash;</resource>&ndash;&gt;-->
   	<!--&lt;!&ndash;</resources>&ndash;&gt;-->
   <!--</build>-->
-=======
-  <!--<build>
-  	<resources>
-  		<resource>
-  			<directory>src/main/java</directory>
-  			<includes>
-  				<include>**/*.xml</include>
-  			</includes>
-  			<filtering>false</filtering>
-  		</resource>
-  	</resources>
-  </build>-->
->>>>>>> origin/caiyang_first_001
 </project>
