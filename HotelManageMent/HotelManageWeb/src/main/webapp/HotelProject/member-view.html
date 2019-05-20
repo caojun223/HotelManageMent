@@ -29,24 +29,18 @@
 			<form class="layui-form x-center" action="" style="width:80%">
 				<div class="layui-form-pane" style="margin-top: 15px;">
 					<div class="layui-form-item">
-						<label class="layui-form-label">日期范围</label>
 						<div class="layui-input-inline">
-							<input class="layui-input" placeholder="开始日" id="LAY_demorange_s">
-						</div>
-						<div class="layui-input-inline">
-							<input class="layui-input" placeholder="截止日" id="LAY_demorange_e">
-						</div>
-						<div class="layui-input-inline">
-							<input type="text" name="username" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+							<input type="text" name="username" placeholder="请输入用户名" autocomplete="off" class="layui-input" id="user-name-label">
 						</div>
 						<div class="layui-input-inline" style="width:80px">
-							<button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+							<button class="layui-btn" lay-filter="sreach" onclick="show()"><i class="layui-icon" >&#xe615;</i></button>
 						</div>
 					</div>
 				</div>
 			</form>
-			<xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><span class="x-right" style="line-height:40px">共有数据：88 条</span></xblock>
-			<table class="layui-table">
+			<xblock>
+				<span class="x-right" style="line-height:40px">共有数据：<span id="index1"></span> 条</span></xblock>
+			<table class="layui-table" id="dataTable">
 				<thead>
 					<tr>
 						<th>
@@ -59,50 +53,21 @@
 							用户名
 						</th>
 						<th>
-							ip
+							用户积分
 						</th>
 						<th>
-							访问时间
-						</th>
-						<th>
-							url
+							用户等级
 						</th>
 						<th>
 							操作
 						</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<input type="checkbox" value="1" name="">
-						</td>
-						<td>
-							1
-						</td>
-						<td>
-							李四
-						</td>
-						<td>
-							192.168.0.2
-						</td>
-						<td>
-							2015.01.16 22:12:24
-						</td>
-						<td>
-							http://www.erdangjiade.com/
-						</td>
-						<td class="td-manage">
-							<a title="删除" href="javascript:;" onclick="view_del(this,'1')" style="text-decoration:none">
-								<i class="layui-icon">&#xe640;</i>
-							</a>
-						</td>
-					</tr>
-				</tbody>
 			</table>
 		</div>
 		<script src="./lib/layui/layui.js" charset="utf-8"></script>
 		<script src="./js/x-layui.js" charset="utf-8"></script>
+		<script src="js/jquery-1.8.3.js"></script>
 		<script>
 			layui.use(['element', 'layer'], function() {
 				$ = layui.jquery; //jquery
@@ -133,6 +98,39 @@
 				});
 			}
 		</script>
+
+	<script>
+		$.ajax({
+			type: "post",
+			contentType: "application/json;charset=utf-8",
+			async: false,
+			url: "http://localhost:8084/UserLevelSelectAll",
+			success: function (data) {
+				$("#index1").append(data.length);
+				console.log(data);
+				$.each(data, function (index, element) {
+					var trStr =
+							"<tr>" +
+							"<td>" + "<input type='checkbox' value='1' >" + "</td>" +
+							"<td>" + element.userId + "</td>" +
+							"<td>" + element.userName + "</td>" +
+							"<td>" + element.userPoints + "</td>" +
+							"<td>" + element.userlevel + "</td>" +
+							"<td class='td-manage'>" +
+							"<a title='编辑' href='javascript:;' onclick='level_edit('编辑','level-edit.html','4','','300')' style='text-decoration:none'>"+
+							"<i class='layui-icon'>&#xe642;</i>" +
+							"</a>" +
+							"<a title='删除' href='javascript:;' onclick='level_del(this,'1')' style='text-decoration:none'>" +
+							"<i class='layui-icon'>&#xe640;</i>" +
+							"</a>" + "</td>" +
+							"</tr>";
+					$("#dataTable").append(trStr);
+				})
+			}
+		});
+
+
+	</script>
 
 	</body>
 

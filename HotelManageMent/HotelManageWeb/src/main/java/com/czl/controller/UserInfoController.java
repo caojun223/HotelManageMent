@@ -39,18 +39,8 @@ public class UserInfoController {
 
     @RequestMapping("userDeleteKey")
     @ResponseBody
-    public int userDeleteKey(@RequestBody List userid1){
-        System.out.println(userid1.size());
-        if (userid1.size()>1){
-            for (int i=0;i<userid1.size();i++){
-                System.out.println(userid1.get(i));
-                Integer userid=(Integer) userid1.get(i);
-                return userInfoService.deleteByPrimaryKey(userid);
-            }
-            return -1;
-        }else {
-            return 1;
-        }
+    public int userDeleteKey(@RequestParam int userid){
+        return userInfoService.deleteByPrimaryKey(userid);
     }
 
 
@@ -58,8 +48,6 @@ public class UserInfoController {
     @ResponseBody
     public int userUpdateState(@RequestParam int userid){
         Userinfo userinfo= userInfoService.selectByPrimaryKey(userid);
-        System.out.println(userinfo.getUserstate());
-        System.out.println(userinfo.getUserstate()=="正常");
         if (userinfo.getUserstate().equals("正常")){
             userinfo.setUserstate("禁止");
             return userInfoService.updateByPrimaryKeySelective(userinfo);
@@ -67,6 +55,26 @@ public class UserInfoController {
             userinfo.setUserstate("正常");
             return userInfoService.updateByPrimaryKeySelective(userinfo);
         }
+    }
+
+    @RequestMapping("userUpdateState3")
+    @ResponseBody
+    public int userUpdateState3(@RequestParam String userid2){
+
+        String[] userid1 = userid2.split(",");
+        for (int i = 0; i < userid1.length; i++) {
+            String useridString = userid1[i];
+            Integer userid = Integer.parseInt(useridString);
+             Userinfo userinfo= userInfoService.selectByPrimaryKey(userid);
+        if (userinfo.getUserstate().equals("正常")){
+            userinfo.setUserstate("禁止");
+            userInfoService.updateByPrimaryKeySelective(userinfo);
+        }else {
+            userinfo.setUserstate("正常");
+            userInfoService.updateByPrimaryKeySelective(userinfo);
+        }
+        }
+        return 1;
     }
 
     @RequestMapping("userUpdatePassword")
@@ -81,4 +89,24 @@ public class UserInfoController {
             return -1;
         }
     }
+
+    @RequestMapping("userInsertSelective")
+    @ResponseBody
+    public int insertSelective(@RequestBody Userinfo record) {
+        Userinfo userinfo = userInfoService.selectByPrimaryName(record.getUsername());
+        if (userinfo == null) {
+            return userInfoService.insertSelective(record);
+        } else {
+            return -1;
+        }
+    }
+
+    @RequestMapping("FuzzySelectChance")
+    @ResponseBody
+    public List<Userinfo> FuzzySelectChance(@RequestParam String username){
+        System.out.println(username);
+        System.out.println(userInfoService.FuzzySelectChance(username));
+        return userInfoService.FuzzySelectChance(username);
+    }
+
 }

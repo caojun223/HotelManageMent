@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.czl.mapper.UserLevelMapper">
+
+    <!--<resultMap id="BaseResultMap" type="com.czl.dto.UserLevel" >-->
+        <!--<id column="UserId" property="UserId" jdbcType="INTEGER" />-->
+        <!--<result column="UserName" property="UserName" jdbcType="VARCHAR" />-->
+        <!--<result column="UserPoints" property="UserPoints" jdbcType="VARCHAR" />-->
+        <!--<result column="(CASE WHEN u1.userpoints &lt;=999 THEN '普通会员'-->
+        <!--WHEN (u1.userpoints BETWEEN 1000 AND 2999) THEN '白银会员'-->
+        <!--WHEN (u1.userpoints BETWEEN 3000 AND 5999) THEN '黄金会员'-->
+        <!--WHEN (u1.userpoints BETWEEN 6000 AND 9999) THEN '铂金会员'-->
+        <!--WHEN (u1.userpoints&gt;=10000) THEN '钻石会员'-->
+        <!--ELSE '普通会员' END)" property="userlevel" jdbcType="VARCHAR" />-->
+    <!--</resultMap>-->
+
+
+
+    <select id="selectAllUserLevel" resultType="com.czl.dto.UserLevel">
+        SELECT DISTINCT u1.`UserId`,u1.`UserName`,u1.`UserPoints`,
+        (CASE WHEN u1.userpoints &lt;=999 THEN '普通会员'
+        WHEN (u1.userpoints BETWEEN 1000 AND 2999) THEN '白银会员'
+        WHEN (u1.userpoints BETWEEN 3000 AND 5999) THEN '黄金会员'
+        WHEN (u1.userpoints BETWEEN 6000 AND 9999) THEN '铂金会员'
+        WHEN (u1.userpoints&gt;=10000) THEN '钻石会员'
+        ELSE '普通会员' END)userlevel
+        FROM userinfo u1,memberlevel m1;
+    </select>
+</mapper>

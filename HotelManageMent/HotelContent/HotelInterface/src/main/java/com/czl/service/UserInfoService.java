@@ -18,4 +18,6 @@ public interface UserInfoService {
     int deleteByPrimaryKey(Integer userid);
 
     int updateByPrimaryKeySelective(Userinfo record);
+
+    List<Userinfo> FuzzySelectChance(String username);
 }

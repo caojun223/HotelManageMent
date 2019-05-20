@@ -13,10 +13,12 @@
 
     <dubbo:application name="HotelService"/>
     <!--<dubbo:registry address="zookeeper://10.12.159.133:2181"/>-->
-    <dubbo:registry address="zookeeper://10.12.159.156:2181"/>
+    <dubbo:registry address="zookeeper://10.12.159.133:2181"/>
     <!--<dubbo:registry address="zookeeper://192.168.8.100:2181"/>-->
 
     <dubbo:service interface="com.czl.service.RoommanageService" ref="roommanageImpl"/>
     <dubbo:service interface="com.czl.service.RoomAndTypeService" ref="roomAndTypeImpl"/>
     <dubbo:service interface="com.czl.service.UserInfoService" ref="userInfoServiceImpl" />
+    <dubbo:service interface="com.czl.service.MemberLevelService" ref="memberLevelImpl" />
+    <dubbo:service interface="com.czl.service.UserLevelService" ref="userLevelImpl" />
 </beans>

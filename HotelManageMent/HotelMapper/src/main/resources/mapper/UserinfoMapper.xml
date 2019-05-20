@@ -96,6 +96,12 @@
     from userinfo
     where UserId = #{userid,jdbcType=INTEGER}
   </select>
+  <select id="selectByPrimaryName" resultMap="BaseResultMap" parameterType="String" >
+    select
+    <include refid="Base_Column_List" />
+    from userinfo
+    where UserName = #{username,jdbcType=VARCHAR}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from userinfo
     where UserId = #{userid,jdbcType=INTEGER}
@@ -303,4 +309,22 @@
       UserEmail = #{useremail,jdbcType=VARCHAR}
     where UserId = #{userid,jdbcType=INTEGER}
   </update>
+
+  <select id="FuzzySelectChance" parameterType="com.czl.pojo.Userinfo" resultMap="BaseResultMap">
+    select * from userinfo where UserName like '%${_parameter}%'
+  </select>
+
+  <!--<select id="FuzzySelectChance" parameterType="com.czl.pojo.Userinfo" resultMap="BaseResultMap">&ndash;&gt;-->
+  <!--select * from userinfo where-->
+    <!--<if test="UserName!=null and UserName!=''">-->
+     <!--UserName like '%${username}%'-->
+    <!--</if>-->
+    <!--<if test="UserTel!=null and UserTel!=''">-->
+      <!--and UserTel like '%${usertel}%'-->
+    <!--</if>-->
+    <!--<if test="UserCart!=null and UserCart!=''">-->
+      <!--and UserCart like '%${usercart}%'-->
+    <!--</if>-->
+  <!--</select>-->
+
 </mapper>

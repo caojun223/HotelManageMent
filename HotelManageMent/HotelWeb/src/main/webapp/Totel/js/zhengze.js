@@ -33,7 +33,6 @@ $("#username").on("blur",function(){
 
 $("#password2").on("blur",function(){
     distance=$("#password2").val();
-    // $("#distance").val("失去焦点后触发");         //blur 获取焦点然后失去焦点时触发，包括鼠标点击离开和TAB键离开。
     var a=$("#password").val();
     var b=$("#password2").val();
     if (a!=b){
@@ -44,7 +43,6 @@ $("#password2").on("blur",function(){
 
 $("#useremail").on("blur",function(){
     distance=$("#useremail").val();
-    // $("#distance").val("失去焦点后触发");         //blur 获取焦点然后失去焦点时触发，包括鼠标点击离开和TAB键离开。
     var re = /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/;
     var useremail=$("#useremail").val();
     if (useremail==""){

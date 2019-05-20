@@ -29,4 +29,6 @@ public interface UserinfoMapper {
     int updateByPrimaryKeySelective(Userinfo record);
 
     int updateByPrimaryKey(Userinfo record);
+
+    List<Userinfo> FuzzySelectChance(String username);
 }

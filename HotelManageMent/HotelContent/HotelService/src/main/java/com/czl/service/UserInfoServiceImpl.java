@@ -43,6 +43,11 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
+    public List<Userinfo> FuzzySelectChance(String username) {
+        return userinfoMapper.FuzzySelectChance(username);
+    }
+
+    @Override
     public List<Userinfo> selectByExample(UserinfoExample example){
         return userinfoMapper.selectByExample(example);
     }
