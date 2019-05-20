@@ -13,6 +13,8 @@
 
 <dubbo:registry address="zookeeper://10.12.159.133:2181"/>
 
-<dubbo:reference interface="com.czl.service.Eservice" id="eserviceimp"></dubbo:reference>
-
+	<dubbo:service interface="com.czl.service.ChangeroomService" ref="changeroomServiceImpl" />
+	<dubbo:service interface="com.czl.service.Eservice" ref="eserviceImp" />
+	<dubbo:service interface="com.czl.service.HotelinfoService" ref="hotelinfoServiceImpl" />
+	<dubbo:service interface="com.czl.service.RoommanageService" ref="roommanageServiceImpl" />
 </beans>

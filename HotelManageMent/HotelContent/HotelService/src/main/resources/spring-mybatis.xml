@@ -7,33 +7,31 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
-<context:property-placeholder location="classpath:db.properties"/>
+	<context:property-placeholder location="classpath:db.properties"/>
 
+	<bean id="ds" class="com.alibaba.druid.pool.DruidDataSource">
+		<property name="driverClassName" value="${driver}"></property>
+		<property name="url" value="${url}"></property>
+		<property name="username" value="${user}"></property>
+		<property name="password" value="${pass}"></property>
+	</bean>
 
+	<bean id="sf" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="ds"></property>
+		<property name="typeAliasesPackage" value="com.czl.pojo"></property>
+		<property name="mapperLocations" value="classpath:com/czl/mapper/*.xml"></property>
+	</bean>
 
-<bean id="ds" class="com.alibaba.druid.pool.DruidDataSource">
-	<property name="driverClassName" value="${driver}"></property>
-	<property name="url" value="${url}"></property>
-	<property name="username" value="${user}"></property>
-	<property name="password" value="${pass}"></property>
-</bean>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.czl.mapper"></property>
+		<property name="sqlSessionFactoryBeanName" value="sf"></property>
+	</bean>
 
-<bean id="sf" class="org.mybatis.spring.SqlSessionFactoryBean">
-	<property name="dataSource" ref="ds"></property>
-	<property name="typeAliasesPackage" value="com.czl.pojo"></property>
-	<property name="mapperLocations" value="classpath:com/czl/mapper/*.xml"></property>
-</bean>
+	<bean id="dtx" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="ds"></property>
+	</bean>
 
-<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-	<property name="basePackage" value="com.czl.mapper"></property>
-	<property name="sqlSessionFactoryBeanName" value="sf"></property>
-</bean>
+	<tx:annotation-driven proxy-target-class="true" transaction-manager="dtx"/>
 
-<bean id="dtx" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-	<property name="dataSource" ref="ds"></property>
-</bean>
-
-<tx:annotation-driven proxy-target-class="true" transaction-manager="dtx"/>
-
-<context:component-scan base-package="com.czl.service"/>
+	<context:component-scan base-package="com.czl.service"/>
 </beans>

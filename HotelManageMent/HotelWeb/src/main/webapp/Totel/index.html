@@ -67,7 +67,7 @@
                     <li class="language-switcher">
                         <nav class="dropdown">
                             <a href="#" class="dropdown-toggle select" data-hover="dropdown" data-toggle="dropdown">
-                                <i class="famfamfam-flag-gb "></i>Chinese<b class="caret"></b>
+                                <i class="famfamfam-flag-cn "></i>Chinese<b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="#"><i class="famfamfam-flag-gr"></i>Ελληνικά</a></li>
@@ -689,7 +689,7 @@
                             <a href="place-details.html">
                                 <img src="images/places/place1.jpg" class="img-responsive" alt="Image">
                                 <div class="place_name">
-                                    <h2>Zakynthos</h2>
+                                    <h2>扎金索斯</h2>
                                 </div>
                             </a>
                         </div>
@@ -700,7 +700,7 @@
                             <a href="place-details.html">
                                 <img src="images/places/place2.jpg" class="img-responsive" alt="Image">
                                 <div class="place_name">
-                                    <h2>Navagio - Zakynthos</h2>
+                                    <h2>Navagio  - 扎金索斯</h2>
                                 </div>
                             </a>
                         </div>
@@ -711,7 +711,7 @@
                             <a href="place-details.html">
                                 <img src="images/places/place3.jpg" class="img-responsive" alt="Image">
                                 <div class="place_name">
-                                    <h2>Santorini</h2>
+                                    <h2>圣托里尼</h2>
                                 </div>
                             </a>
                         </div>
@@ -724,7 +724,7 @@
                             <a href="place-details.html">
                                 <img src="images/places/place4.jpg" class="img-responsive" alt="Image">
                                 <div class="place_name">
-                                    <h2>Acropolis</h2></div>
+                                    <h2>雅典卫城</h2></div>
                             </a>
                         </div>
                     </div>
@@ -734,7 +734,7 @@
                             <a href="place-details.html">
                                 <img src="images/places/place5.jpg" class="img-responsive" alt="Image">
                                 <div class="place_name">
-                                    <h2>Naxos</h2>
+                                    <h2>纳克索斯</h2>
                                 </div>
                             </a>
                         </div>
@@ -745,7 +745,7 @@
                             <a href="place-details.html">
                                 <img src="images/places/place6.jpg" class="img-responsive" alt="Image">
                                 <div class="place_name">
-                                    <h2>Rodos</h2>
+                                    <h2>罗得</h2>
                                 </div>
                             </a>
                         </div>
@@ -756,7 +756,7 @@
                             <a href="place-details.html">
                                 <img src="images/places/place7.jpg" class="img-responsive" alt="Image">
                                 <div class="place_name">
-                                    <h2>Mykonos</h2>
+                                    <h2>米科诺斯</h2>
                                 </div>
                             </a>
                         </div>
@@ -927,5 +927,35 @@
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script>
 
+    <script type="text/javascript">
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8083/HSelectByExample",
+            async: "false",
+            dataType: "json",
+            contentType: "application/json;utf-8",
+            success: function (data) {
+                console.log(data);
+                $.each(data, function (index, element) {
+                    var trStr =
+                        "<tr>" +
+                        "<td>" + element.HotelId +"</td>" +
+                        "<td>" + element.HotelDesc + "</td>" +
+                        "<td>" + element.HotelAddress + "</td>" +
+                        "<td>" + element.HotelTel + "</td>" +
+                        "<td>" + element.HotelEmail + "</td>" +
+                        "<td>" + element.NewsId + "</td>" +
+                        "</tr>"
+                    $("#dataTable").append(trStr);
+                },function(){
+                    location.href="./room.html";
+                });
+            }
+        });
+
+
+    </script>
 </body>
+
 </html>

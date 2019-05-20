@@ -15,5 +15,9 @@
 	
 	<dubbo:protocol name="dubbo" port="20880" />
 	
+	<dubbo:service interface="com.czl.service.ChangeroomService" ref="changeroomServiceImpl" />
 	<dubbo:service interface="com.czl.service.Eservice" ref="eserviceImp" />
+	<dubbo:service interface="com.czl.service.HotelinfoService" ref="hotelinfoServiceImpl" />
+	<dubbo:service interface="com.czl.service.RoommanageService" ref="roommanageServiceImpl" />
+	<dubbo:service interface="com.czl.service.BookinfoService" ref="bookinfoServiceImpl" />
 </beans>

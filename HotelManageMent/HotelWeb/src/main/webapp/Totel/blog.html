@@ -60,9 +60,10 @@
                     <li class="language-switcher">
                         <nav class="dropdown">
                             <a href="#" class="dropdown-toggle select" data-hover="dropdown" data-toggle="dropdown">
-                                <i class="famfamfam-flag-gb "></i>English<b class="caret"></b>
+                                <i class="famfamfam-flag-cn "></i>Chinese<b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
+                                <li><a href="#"><i class="famfamfam-flag-gb"></i>English</a></li>
                                 <li><a href="#"><i class="famfamfam-flag-gr"></i>Ελληνικά</a></li>
                                 <li><a href="#"><i class="famfamfam-flag-it"></i>Italiano</a></li>
                                 <li><a href="#"><i class="famfamfam-flag-de"></i>Deutsch</a></li>
@@ -437,6 +438,33 @@
     <script type="text/javascript" src="js/countUp.min.js"></script>
     <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8083/",
+            async: "false",
+            dataType: "json",
+            contentType: "application/json;utf-8",
+            success: function (data) {
+                console.log(data);
+                $.each(data, function (index, element) {
+                    var trStr =
+                        "<tr>" +
+                        "<td>" + "<input type='checkbox' width='5%'>" + "</td>" +
+                        "<td>" + element.BookId + "</td>" +
+                        "<td>" + element.UserName + "</td>" +
+                        "<td>" + element.UserEmail + "</td>" +
+                        "<td>" + element.ChickIn + "</td>" +
+                        "<td>" + element.ChickOut + "</td>" +
+                        "<td>" + element.TypeId + "</td>" +
+                        "</tr>"
+                    $("#dataTable").append(trStr);
+                });
+            }
+        });
+
+    </script>
 
 </body>
 

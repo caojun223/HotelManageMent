@@ -293,7 +293,33 @@
     <script type="text/javascript" src="js/countUp.min.js"></script>
     <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
 
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8083/getAllHotelinfo",
+            async: "false",
+            dataType: "json",
+            contentType: "application/json;utf-8",
+            success: function (data) {
+                console.log(data);
+                $.each(data, function (index, element) {
+                    var trStr =
+                        "<tr>" +
+                        "<td>" + "<input type='checkbox' width='5%'>" + "</td>" +
+                        "<td>" + element.HotelId + "</td>" +
+                        "<td>" + element.HotelDesc + "</td>" +
+                        "<td>" + element.HotelAddress + "</td>" +
+                        "<td>" + element.HotelTel + "</td>" +
+                        "<td>" + element.HotelEmail + "</td>" +
+                        "<td>" + element.NewsId + "</td>" +
+                        "</tr>"
+                    $("#dataTable").append(trStr);
+                });
+            }
+        });
+
+    </script>
 
 </body>
 
