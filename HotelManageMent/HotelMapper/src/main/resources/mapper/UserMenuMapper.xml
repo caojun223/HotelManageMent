@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.czl.mapper.UserMenuMapper" >
+   <select id="getAllMenu" parameterType="int" resultType="Menu">
+        SELECT  DISTINCT m.`menuname`,m.menuid,m.parentid,m.mnid,m.menupath
+       FROM
+          employee e, employee_role er, role r,role_menu rm, menu m
+       WHERE
+          e.`EmployeeId`=er.`employeeid`
+          AND er.`roleid`=r.`RoleId`
+          AND r.`RoleId`=rm.`roleid`
+          AND rm.`mnid`=m.`mnid`
+          AND e.`EmployeeId`=#{EmployeeId}
+   </select>
+
+    <select id="getAllChildrenMenu" parameterType="int" resultType="Menu">
+        SELECT menu.mnid, menu.menuid,menu.menuname,menu.menupath FROM menu WHERE parentid=#{parentid}
+    </select>
+
+    <select id="getAllErole" resultType="com.czl.pojo.dto.EmployRole">
+        SELECT  DISTINCT e.employeeid,e.employeename,e.employeetel,r.rolename,e.employeestate
+       FROM
+          employee e, employee_role er, role r
+       WHERE
+          e.`EmployeeId`=er.`employeeid`
+          AND er.`roleid`=r.`RoleId`
+
+    </select>
+
+    <select id="getEmpRoleById" parameterType="int" resultType="com.czl.pojo.dto.EmployRole">
+        SELECT  DISTINCT e.employeeid,e.employeename,e.employeetel,r.rolename,e.employeestate,e.employeepass
+       FROM
+          employee e, employee_role er, role r
+       WHERE
+          e.`EmployeeId`=er.`employeeid`
+          AND er.`roleid`=r.`RoleId`
+          and e.employeeid=#{employeeid}
+
+    </select>
+
+    <select id="getAllRoles" resultType="Role">
+        select role.roleid, role.rolename from role
+    </select>
+
+    <update id="updateRole" parameterType="Employee_role">
+        update employee_role set roleid=#{roleid} where employeeid = #{employeeid}
+    </update>
+
+    <select id="getAllMenus" resultType="Menu">
+       SELECT menu.mnid, menu.menuid,menu.menuname FROM menu WHERE parentid = 0
+    </select>
+
+    <delete id="deleteMenu" parameterType="int">
+        delete from role_menu where roleid=#{roleid}
+    </delete>
+
+    <insert id="addMenu" parameterType="Role_Menu" useGeneratedKeys="true" keyProperty="role_menuid">
+      insert into role_menu(roleid,mnid) values(#{roleid},#{mnid})
+    </insert>
+</mapper>
