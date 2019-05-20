@@ -44,7 +44,7 @@
   </dependencies>
   <!-- 打包时包含源代码包下的资源文件 -->
   <!-- 解决有xml的文件项目发布不出去 -->
-  <build>
+  <!--<build>
   	<resources>
   		<resource>
   			<directory>src/main/java</directory>
@@ -54,5 +54,5 @@
   			<filtering>false</filtering>
   		</resource>
   	</resources>
-  </build>
+  </build>-->
 </project>

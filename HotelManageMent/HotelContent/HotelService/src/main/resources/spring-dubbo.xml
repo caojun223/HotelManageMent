@@ -15,5 +15,6 @@
 	
 	<dubbo:protocol name="dubbo" port="20880" />
 	
-	<dubbo:service interface="com.czl.service.Eservice" ref="eserviceImp" />
+	<dubbo:service interface="com.czl.service.EmployeeService" ref="employeeServiceImp" />
+	<dubbo:service interface="com.czl.service.UserMenuService" ref="userMenuServiceImp" />
 </beans>
