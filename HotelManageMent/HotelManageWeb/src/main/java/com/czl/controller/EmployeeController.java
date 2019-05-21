@@ -26,18 +26,18 @@ public class EmployeeController {
     }
     @RequestMapping(value = "loginCheck",method = RequestMethod.POST)
     @ResponseBody
-    public Boolean loginCheck(@RequestParam String employeename, @RequestParam String employeepass){
+    public Employee loginCheck(@RequestParam String employeename, @RequestParam String employeepass){
 
-        /*System.out.println(employeename);
+        System.out.println(employeename);
         Employee employee1 = employeeService.getEmployeeByName(employeename);
 
         System.out.println(employee1);
-        return employee1;*/
+        return employee1;
 
         //创建Subject实例对象
-        Subject subject = SecurityUtils.getSubject();
+       /* Subject subject = SecurityUtils.getSubject();*/
         //判断当前用户是否已登录
-        if (subject.isAuthenticated() == false) {
+       /* if (subject.isAuthenticated() == false) {
             UsernamePasswordToken token = new UsernamePasswordToken(employeename, employeepass);
             try {
                 subject.login(token);
@@ -48,6 +48,6 @@ public class EmployeeController {
                 return false;
             }
         }
-        return true;
+        return true;*/
     }
 }
